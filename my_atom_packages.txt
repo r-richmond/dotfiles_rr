@@ -1,0 +1,11 @@
+an-old-hope-syntax
+autocomplete-swift
+git-diff-details
+git-plus
+git-time-machine
+language-swift
+language-protobuf
+minimap
+minimap-git-diff
+qolor
+split-diff
