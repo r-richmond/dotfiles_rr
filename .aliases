@@ -15,7 +15,7 @@ alias -- -="cd -"
 alias list_atom_packages="apm list --installed --bare | grep '^[^@]\+' -o"
 
 # Git Helpers
-alias cleanup_git_typechange ="git status | grep typechange | awk '{print \$2}' | xargs git checkout"
+alias cleanup_git_typechange="git status | grep typechange | awk '{print \$2}' | xargs git checkout"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
