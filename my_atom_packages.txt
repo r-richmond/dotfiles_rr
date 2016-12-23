@@ -5,6 +5,7 @@ git-plus
 git-time-machine
 language-swift
 language-protobuf
+merge-conflicts
 minimap
 minimap-git-diff
 qolor
