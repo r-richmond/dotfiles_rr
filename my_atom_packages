@@ -1,12 +1,13 @@
-an-old-hope-syntax
+atom-beautify
+autocomplete-python
 autocomplete-swift
-git-diff-details
 git-plus
 git-time-machine
+hyperclick
 language-swift
 language-protobuf
 merge-conflicts
 minimap
+minimap-find-and-replace
 minimap-git-diff
-qolor
 split-diff

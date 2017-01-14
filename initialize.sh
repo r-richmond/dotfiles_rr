@@ -12,7 +12,7 @@ function doIt() {
   --exclude "LICENSE-MIT.txt" \
   --exclude ".macos" \
   --exclude "Brewfile" \
-  --exclude "my_atom_packages.txt" \
+  --exclude "my_atom_packages" \
   -avh --no-perms . ~;
   source ~/.bash_profile;
 
@@ -35,7 +35,7 @@ function doIt() {
     fi;
     # Install Atom Packages
     # http://evanhahn.com/atom-apm-install-list/
-    apm install --packages-file my_atom_packages.txt;
+    apm install --packages-file my_atom_packages;
     # update mac settings
     echo "updating mac os settings";
     bash .macos;
