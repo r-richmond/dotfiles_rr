@@ -48,7 +48,7 @@
     rightEditorColor: "green"
     syncHorizontalScroll: true
   welcome:
-    showOnStartup: true
+    showOnStartup: false
 ".diff.source":
   editor:
     preferredLineLength: 120
