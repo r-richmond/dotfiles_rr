@@ -1,0 +1,37 @@
+"*":
+  "autocomplete-python":
+    useKite: false
+    useSnippets: "required"
+  core:
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "an-old-hope-syntax"
+    ]
+  editor:
+    invisibles: {}
+    preferredLineLength: 120
+    showIndentGuide: true
+    showInvisibles: true
+    tabType: "soft"
+  "exception-reporting":
+    userId: "59679e97-877a-be0d-5cdb-fc639e15f075"
+  "git-diff-details":
+    closeAfterCopy: true
+    enableSyntaxHighlighting: true
+  "git-plus":
+    experimental: {}
+    general:
+      _analyticsUserId: "9792c6bb-7ab5-4322-81a8-c5c349ce8fb2"
+      messageTimeout: 7
+      splitPane: "Right"
+  "merge-conflicts": {}
+  minimap:
+    plugins:
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+  "one-dark-ui": {}
+  welcome:
+    showOnStartup: true
