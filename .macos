@@ -45,6 +45,40 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
+# Set mouse and scrolling speed
+defaults write NSGlobalDomain com.apple.mouse.scaling -int 3
+defaults write NSGlobalDomain com.apple.scrollwheel.scaling -float 0.6875
+
+##############################################################################
+# Security                                                                   #
+##############################################################################
+# Based on:
+# https://github.com/drduh/macOS-Security-and-Privacy-Guide
+# https://benchmarks.cisecurity.org/tools2/osx/CIS_Apple_OSX_10.12_Benchmark_v1.0.0.pdf
+
+# Enable firewall. Possible values:
+#   0 = off
+#   1 = on for specific sevices
+#   2 = on for essential services
+#sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+
+# Do not show password hints
+defaults write /Library/Preferences/com.apple.loginwindow RetriesUntilHint -int 0
+
+# Disable guest account login
+defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
+
+# Destroy FileVault key when going into standby mode, forcing a re-auth.
+# Source: https://web.archive.org/web/20160114141929/http://training.apple.com/pdf/WP_FileVault2.pdf
+pmset destroyfvkeyonstandby 1
+
+# Log authentication events for 90 days
+perl -p -i -e 's/rotate=seq file_max=5M all_max=20M/rotate=utc file_max=5M ttl=90/g' "/etc/asl/com.apple.authd"
+
+# Log installation events for a year
+perl -p -i -e 's/format=bsd/format=bsd mode=0640 rotate=utc compress file_max=5M ttl=365/g' "/etc/asl/com.apple.install"
+
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
@@ -296,6 +330,12 @@ defaults write org.m0k.transmission WarningLegal -bool false
 defaults write org.m0k.transmission BlocklistNew -bool true
 defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
+
+# Don’t prompt for confirmation before removing non-downloading active transfers
+defaults write org.m0k.transmission CheckRemoveDownloading -bool true
+
+# Randomize port on launch
+defaults write org.m0k.transmission RandomPort -bool true
 
 ###############################################################################
 # Kill affected applications                                                  #
