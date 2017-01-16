@@ -1,4 +1,10 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "4fdacc2f-094c-4b77-9678-b17f44d0acd1"
+    json:
+      indent_size: 2
+      keep_array_indentation: true
   "autocomplete-python":
     useKite: false
     useSnippets: "required"
@@ -25,6 +31,8 @@
       _analyticsUserId: "9792c6bb-7ab5-4322-81a8-c5c349ce8fb2"
       messageTimeout: 7
       splitPane: "Right"
+  "line-ending-selector":
+    defaultLineEnding: "LF"
   "merge-conflicts": {}
   minimap:
     plugins:
@@ -33,5 +41,17 @@
       "git-diff": true
       "git-diffDecorationsZIndex": 0
   "one-dark-ui": {}
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
   welcome:
     showOnStartup: true
+".diff.source":
+  editor:
+    preferredLineLength: 120
+".protobuf.source":
+  editor:
+    preferredLineLength: 120
