@@ -12,8 +12,8 @@ function doIt() {
   --exclude "README.md" \
   --exclude "LICENSE-MIT.txt" \
   --exclude ".macos" \
-  --exclude "Brewfile" \
-  --exclude "my_atom_packages" \
+  --exclude "Brewfiles/" \
+  --exclude ".atom/.my_atom_packages" \
   -avh --no-perms . ~;
   source ~/.bash_profile;
 
