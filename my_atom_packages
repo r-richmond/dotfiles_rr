@@ -1,3 +1,4 @@
+an-old-hope-syntax
 atom-beautify
 autocomplete-python
 autocomplete-swift
@@ -5,8 +6,8 @@ git-plus
 git-time-machine
 hyperclick
 language-dotfiles
-language-swift
 language-protobuf
+language-swift
 merge-conflicts
 minimap
 minimap-find-and-replace

@@ -8,6 +8,7 @@ function doIt() {
   --exclude ".DS_Store" \
   --exclude ".osx" \
   --exclude "initialize.sh" \
+  --exclude "update.sh" \
   --exclude "README.md" \
   --exclude "LICENSE-MIT.txt" \
   --exclude ".macos" \
