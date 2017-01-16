@@ -13,5 +13,3 @@ if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_
 elif [ -f /etc/bash_completion ]; then
   source /etc/bash_completion;
 fi;
-
-#defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys > 3_off.txt
