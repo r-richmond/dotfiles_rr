@@ -25,7 +25,12 @@ function doIt() {
     /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)";
     # Run brewfile
     # Install new bash and other things
-    brew bundle;
+    brew bundle --file=Brewfiles/BrewFileUniversal;
+    read -p "Install Personal Brews? (y/n) " -n 1;
+    echo "";
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+      brew bundle --file=Brewfiles/BrewFilePersonal;
+    fi;
     brew install homebrew/versions/bash-completion2;
     # Switch to using brew-installed bash as default shell
     if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
@@ -58,7 +63,7 @@ else
   read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
   echo "";
   if [[ $REPLY =~ ^[Yy]$ ]]; then
-  doIt;
+    doIt;
   fi;
 fi;
 unset doIt;

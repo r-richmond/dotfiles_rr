@@ -9,27 +9,22 @@ cask 'atom'
 cask 'cheatsheet'
 cask 'coderunner'
 cask 'dash'
-cask 'dropbox'
 cask 'iterm2'
 cask 'github-desktop'
 cask 'google-chrome'
-cask 'pycharm'
+cask 'licecap'
 cask 'postgres'
+cask 'pycharm'
 cask 'spectacle'
-cask 'transmission'
-cask 'tunnelblick'
-cask 'vlc'
+
 # Not in Application Folder
 cask 'betterzipql'
 cask 'java'
 cask 'qlcolorcode'
-cask 'qlstephen'
 cask 'qlmarkdown'
+cask 'qlstephen'
 cask 'quicklook-csv'
 
 # Mac App Store
-mas '1Password', id: 443987910
-mas 'CodeBox', id: 412536790
-mas 'MacFamilyTree 7', id: 572280828
 mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Xcode', id: 497799835

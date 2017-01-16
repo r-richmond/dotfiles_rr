@@ -1,0 +1,10 @@
+# Application Folder
+cask 'dropbox'
+cask 'transmission'
+cask 'tunnelblick'
+cask 'vlc'
+
+# Mac App Store
+mas '1Password', id: 443987910
+mas 'CodeBox', id: 412536790
+mas 'MacFamilyTree 7', id: 572280828
