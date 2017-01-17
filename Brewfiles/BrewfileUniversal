@@ -28,3 +28,7 @@ cask 'quicklook-csv'
 # Mac App Store
 mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Xcode', id: 497799835
+
+#Dupes
+tap 'homebrew/dupes'
+brew homebrew/dupes/nano
