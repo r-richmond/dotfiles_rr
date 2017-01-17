@@ -13,7 +13,7 @@ function doIt() {
   --exclude "LICENSE-MIT.txt" \
   --exclude ".macos" \
   --exclude ".macos_personal" \
-  --exclude "Brewfiles/" \
+  --exclude "brewfiles/" \
   --exclude ".atom/.my_atom_packages" \
   -avh --no-perms . ~;
   source ~/.bash_profile;
@@ -26,7 +26,7 @@ function doIt() {
     /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)";
     # Run brewfile
     # Install new bash and other things
-    brew bundle --file=Brewfiles/BrewFileUniversal;
+    brew bundle --file=brewfiles/brewfile_universal;
     brew install homebrew/versions/bash-completion2;
     # Switch to using brew-installed bash as default shell
     if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
@@ -42,7 +42,7 @@ function doIt() {
     read -p "Run Personal Scripts? (y/n) " -n 1;
     echo "";
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-      brew bundle --file=Brewfiles/BrewFilePersonal;
+      brew bundle --file=brewfiles/brewfile_personal;
       if [ -f ".macos_personal"]; then
         bash .macos_personal; #Computername
       fi;
