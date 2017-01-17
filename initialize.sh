@@ -41,7 +41,7 @@ function doIt() {
     fi;
     # Install Atom Packages
     # http://evanhahn.com/atom-apm-install-list/
-    apm install --packages-file atom/.my_atom_packages;
+    apm install --packages-file .atom/.my_atom_packages;
     # update mac settings
     echo "updating mac os settings";
     bash .macos;
