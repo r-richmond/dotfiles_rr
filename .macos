@@ -3,8 +3,6 @@
 # ~/.macos — https://mths.be/macos
 # Finding more https://github.com/mathiasbynens/dotfiles/issues/5#issuecomment-4117712
 
-HOSTNAME="rrichmond-2012"
-
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
@@ -16,10 +14,11 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName ${HOSTNAME}
-sudo scutil --set HostName ${HOSTNAME}
-sudo scutil --set LocalHostName ${HOSTNAME}
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string ${HOSTNAME}
+#HOSTNAME="CoolComputer" #Moved to .macos_personal
+#sudo scutil --set ComputerName ${HOSTNAME}
+#sudo scutil --set HostName ${HOSTNAME}
+#sudo scutil --set LocalHostName ${HOSTNAME}
+#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string ${HOSTNAME}
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true

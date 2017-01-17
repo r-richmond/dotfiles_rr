@@ -12,6 +12,7 @@ function doIt() {
   --exclude "README.md" \
   --exclude "LICENSE-MIT.txt" \
   --exclude ".macos" \
+  --exclude ".macos_personal" \
   --exclude "Brewfiles/" \
   --exclude ".atom/.my_atom_packages" \
   -avh --no-perms . ~;
@@ -26,11 +27,6 @@ function doIt() {
     # Run brewfile
     # Install new bash and other things
     brew bundle --file=Brewfiles/BrewFileUniversal;
-    read -p "Install Personal Brews? (y/n) " -n 1;
-    echo "";
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-      brew bundle --file=Brewfiles/BrewFilePersonal;
-    fi;
     brew install homebrew/versions/bash-completion2;
     # Switch to using brew-installed bash as default shell
     if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
@@ -43,6 +39,14 @@ function doIt() {
     # http://evanhahn.com/atom-apm-install-list/
     apm install --packages-file .atom/.my_atom_packages;
     # update mac settings
+    read -p "Run Personal Scripts? (y/n) " -n 1;
+    echo "";
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+      brew bundle --file=Brewfiles/BrewFilePersonal;
+      if [ -f ".macos_personal"]; then
+        bash .macos_personal; #Computername
+      fi;
+    fi;
     echo "updating mac os settings";
     bash .macos;
   else
