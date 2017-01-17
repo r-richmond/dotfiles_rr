@@ -1,4 +1,9 @@
 [alias]
+  #Notes
+  #http://stackoverflow.com/questions/3321492/git-alias-with-positional-parameters
+
+  # list all aliases https://github.com/tj/git-extras/blob/master/bin/git-alias
+  alias = "!git config --get-regexp 'alias.*' | sed 's/^alias.//' | sed 's/[ ]/ = /';"
 
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --pretty=oneline -n 20 --graph --abbrev-commit
