@@ -9,12 +9,23 @@ source ~/.bash_profile
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 function doIt() {
-  echo "updating atom config files"
-  for file in ~/.atom/.{config.cson, init.coffee, keymap.cson, snippets.cson, styles.less}; do
-    [ -r "$file" ] && [ -f "$file" ] && rsync -c "$file" "$DIR"/.atom/
+  which -s atom
+  if [[ $? = 0 ]] ; then
+    #echo "updating atom config files"
+    for file in ~/.atom/{config.cson,init.coffee,keymap.cson,snippets.cson,styles.less}; do
+      [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/.atom/
+    done;
+    #echo  "updating atom package list"
+    list_atom_packages > .atom/.my_atom_packages
+  fi;
+  echo "updating dot files except .gitconfig"
+  for file in ~/.{aliases,bash_profile,bash_prompt,bashrc,exports,extra,functions,gitignore,inputrc,nanorc}; do
+    [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/
   done;
-  echo  "updating atom package list"
-  list_atom_packages > .atom/.my_atom_packages
+  for file in ~/.nano/*.nanorc; do
+    [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/.nano/
+  done;
+  echo "updates finished review local repo for changes"
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
