@@ -3,7 +3,7 @@
 complete -W "NSGlobalDomain" defaults;
 
 for file in ~/.{bash_prompt,exports,aliases,functions,extra}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+  [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
 
