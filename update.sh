@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 #Make sure we can use aliases
-shopt -s expand_aliases
+shopt -s expand_aliases;
+# shellcheck source=/dev/null
 source ~/.bash_profile
 
 # Move files
@@ -28,7 +29,7 @@ function doIt() {
   echo "updates finished review local repo for changes"
 }
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
+if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
   doIt;
 else
   read -p "This may overwrite existing files in your dot files repo. Are you sure? (y/n) " -n 1;

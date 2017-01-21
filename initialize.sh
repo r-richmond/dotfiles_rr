@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Move files
-cd "$(dirname "${BASH_SOURCE}")";
+cd "$(dirname "${BASH_SOURCE}")" || exit;
 
 function doIt() {
   rsync --exclude ".git/" \
@@ -16,7 +16,9 @@ function doIt() {
   --exclude "brewfiles/" \
   --exclude ".atom/.my_atom_packages" \
   -avh --no-perms . ~;
-  source ~/.bash_profile;
+
+  # shellcheck source=/dev/null
+  source ~/.bash_profile
 
   # Check if Homebrew is installed
   which -s brew
@@ -43,7 +45,7 @@ function doIt() {
     echo "";
     if [[ $REPLY =~ ^[Yy]$ ]]; then
       brew bundle --file=brewfiles/brewfile_personal;
-      if [ -f ".macos_personal"]; then
+      if [ -f ".macos_personal" ]; then
         bash .macos_personal; #Computername
       fi;
     fi;
@@ -61,7 +63,7 @@ function doIt() {
   fi
 }
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
+if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
   doIt;
 else
   read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;

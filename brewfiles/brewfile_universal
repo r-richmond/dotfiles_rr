@@ -1,9 +1,10 @@
 brew 'bash'
 brew 'git'
+brew 'git-open' #https://github.com/jeffreyiacono/git-open
 brew 'mas'
 brew 'nmap'
 brew 'python3'
-brew 'git-open' #https://github.com/jeffreyiacono/git-open
+brew 'shellcheck'
 
 # Application Folder
 cask 'atom'
