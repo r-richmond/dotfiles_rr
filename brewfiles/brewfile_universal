@@ -5,6 +5,7 @@ brew 'mas'
 brew 'nmap'
 brew 'python3'
 brew 'shellcheck'
+#brew 'terminal-notifier' # may use this later
 
 # Application Folder
 cask 'atom'

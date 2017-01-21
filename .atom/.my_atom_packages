@@ -10,6 +10,8 @@ hyperclick
 language-dotfiles
 language-protobuf
 language-swift
+linter
+linter-shellcheck
 merge-conflicts
 minimap
 minimap-find-and-replace
