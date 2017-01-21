@@ -3,6 +3,7 @@ brew 'git'
 brew 'mas'
 brew 'nmap'
 brew 'python3'
+brew 'git-open' #https://github.com/jeffreyiacono/git-open
 
 # Application Folder
 cask 'atom'
