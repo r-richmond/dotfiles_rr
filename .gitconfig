@@ -5,6 +5,11 @@
   # list all aliases https://github.com/tj/git-extras/blob/master/bin/git-alias
   alias = "!git config --get-regexp 'alias.*' | sed 's/^alias.//' | sed 's/[ ]/ = /';"
 
+  # cleanup files with a type change status
+  # http://stackoverflow.com/questions/24533390/git-reset-files-with-typechange-status
+  cleanup-typechange = "!git status | grep typechange | awk '{print $2}' | xargs git checkout"
+  # .aliases alias cleanup_git_typechange="git status | grep typechange | awk '{print \$2}' | xargs git checkout"
+
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
