@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
 # Make atom the default editor.
-export EDITOR=$(which nano) # not sure if this will work lets find out
-#export EDITOR="/usr/local/bin/atom"
+export EDITOR=$(which nano) # used for cron
+
+# Make atom the default editor for git or nano if not
+if hash atom 2>/dev/null; then
+  git config --global core.editor ""$(which atom)" --wait"
+else
+  git config --global core.editor "$(which nano)"
+fi;
 
 # Enable persistent REPL history for `node`.
 #export NODE_REPL_HISTORY=~/.node_history;

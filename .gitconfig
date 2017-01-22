@@ -120,8 +120,7 @@
   # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
   precomposeunicode = false
 
-  # Use atom as commit editor
-  editor = 'atom' --wait
+  # Use atom as commit editor if exists else nano see .exports
 
   # Use diff so fancy as default diff
   pager = diff-so-fancy | less --tabs=4 -RFX
