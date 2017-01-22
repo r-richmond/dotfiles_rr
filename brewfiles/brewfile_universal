@@ -1,33 +1,34 @@
 brew 'bash'
-brew 'diff-so-fancy'
+brew 'diff-so-fancy' # https://github.com/so-fancy/diff-so-fancy
 brew 'git'
-brew 'git-open' #https://github.com/jeffreyiacono/git-open
-brew 'mas'
-brew 'nmap'
+brew 'git-extras' # https://github.com/tj/git-extras
+brew 'git-open' # https://github.com/jeffreyiacono/git-open
+brew 'mas' # https://github.com/mas-cli/mas
+brew 'nmap' # port tool
 brew 'python3'
-brew 'shellcheck'
+brew 'shellcheck' # https://github.com/koalaman/shellcheck
 #brew 'terminal-notifier' # may use this later
 
 # Application Folder
-cask 'atom'
-cask 'cheatsheet'
+cask 'atom' # Text editor
+cask 'cheatsheet' # Shows shortcuts by holding down cmd
 cask 'coderunner'
-cask 'dash'
-cask 'iterm2'
-cask 'github-desktop'
+cask 'dash' # Documentation
+cask 'iterm2' # Terminal alternative
+cask 'github-desktop' # GUI for github
 cask 'google-chrome'
-cask 'licecap'
+cask 'licecap' # Screenrecording software
 cask 'postgres'
-cask 'pycharm'
-cask 'spectacle'
+cask 'pycharm' # Python IDE
+cask 'spectacle' # Window manager
 
 # Not in Application Folder
-cask 'betterzipql'
+cask 'betterzipql' # QL for zips
 cask 'java'
-cask 'qlcolorcode'
-cask 'qlmarkdown'
-cask 'qlstephen'
-cask 'quicklook-csv'
+cask 'qlcolorcode' # Colorize QL
+cask 'qlmarkdown' # QL for .md
+cask 'qlstephen' #
+cask 'quicklook-csv' # QL for csv
 
 # Mac App Store
 mas 'Microsoft Remote Desktop', id: 715768417
