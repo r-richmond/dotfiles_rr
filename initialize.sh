@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Move files
-cd "$(dirname "${BASH_SOURCE}")" || exit;
+cd "$(dirname "${BASH_SOURCE[0]}")" || exit;
 
 function doIt() {
   rsync --exclude ".git/" \
@@ -23,6 +23,7 @@ function doIt() {
   # Check if Homebrew is installed
   which -s brew
   if [[ $? != 0 ]] ; then
+    echo "no brew found; running as new install";
     # Install Homebrew
     # https://github.com/mxcl/homebrew/wiki/installation
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
@@ -52,15 +53,14 @@ function doIt() {
     echo "updating mac os settings";
     bash .macos;
   else
-    # Make sure we’re using the latest Homebrew.
-    brew update;
-    # Upgrade any already-installed formulae.
-    brew upgrade;
-    # Remove unused files
-    brew cleanup;
-    # Update all atom packages
-    apm upgrade;
-  fi
+    echo "brew found; running as update not new install";
+    # moved updating to crontab/scripts/nightly.sh;
+  fi;
+  echo "assigning crontab";
+  crontab ~/crontab/crontab;
+  for file in ~/.crontab/scripts/*; do
+    chmod +x "$file";
+  done;
 }
 
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then

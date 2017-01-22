@@ -1,0 +1,25 @@
+# https://github.com/paulirish/dotfiles
+# el capitan makes crontab really hard.
+#   http://stackoverflow.com/questions/32781884/is-crontab-broken-on-osx-el-capitan
+#
+# http://superuser.com/questions/243893/how-to-make-run-cron-on-osx-10-6-2/243944#243944
+#
+# `crontab -l` see whats listed
+#
+# env EDITOR=nano crontab -e
+#
+# see crontab/scripts/ folder
+#    chmod +x *.sh
+
+#=====================================================================#
+# General                                                             #
+#=====================================================================#
+#  Min  |  Hour  |  Mday  |  Month  |  Wday  |  Command               #
+#=====================================================================#
+#  *       *        *        *         *        $HOME/bin/gmail.rb
+   3       0        *        *         *        $HOME/crontab/scripts/nightly.sh
+#  0       *        *        *         *        $HOME/crontab/dotfiles/cron/every-hour.sh
+#  0       0        *        *         0        $HOME/crontab/dotfiles/cron/twice-a-week.sh
+#  0       0        *        *         4        $HOME/crontab/dotfiles/cron/twice-a-week.sh
+#  */15    *        *        *         *        $HOME/bin/temp-help.sh
+#=====================================================================#
