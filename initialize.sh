@@ -58,7 +58,7 @@ function doIt() {
   fi;
   echo "assigning crontab";
   crontab ~/crontab/crontab;
-  for file in ~/.crontab/scripts/*; do
+  for file in ~/crontab/scripts/*; do
     chmod +x "$file";
   done;
 }

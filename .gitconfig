@@ -20,6 +20,9 @@
   # who am i?
   whoami = "!git config --global user.name && git config --global user.email"
 
+  # old diff aka pre diff-so-fancy
+  diff-plain = "!git --no-pager diff"
+
   # View the current working tree status using the short format
   s = status -s
 
@@ -119,6 +122,9 @@
 
   # Use atom as commit editor
   editor = 'atom' --wait
+
+  # Use diff so fancy as default diff
+  pager = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
 

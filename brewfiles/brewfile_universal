@@ -1,4 +1,5 @@
 brew 'bash'
+brew 'diff-so-fancy'
 brew 'git'
 brew 'git-open' #https://github.com/jeffreyiacono/git-open
 brew 'mas'
