@@ -11,9 +11,7 @@ function doIt() {
   --exclude "update.sh" \
   --exclude "README.md" \
   --exclude "LICENSE-MIT.txt" \
-  --exclude ".macos" \
-  --exclude ".macos_personal" \
-  --exclude "brewfiles/" \
+  --exclude "setup_files/" \
   --exclude ".atom/.my_atom_packages" \
   -avh --no-perms . ~;
 
@@ -27,9 +25,8 @@ function doIt() {
     # Install Homebrew
     # https://github.com/mxcl/homebrew/wiki/installation
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
-    # Run brewfile
     # Install new bash and other things
-    brew bundle --file=brewfiles/brewfile_universal;
+    brew bundle --file=brewfiles/universal.brewfile;
     brew install homebrew/versions/bash-completion2;
     # Switch to using brew-installed bash as default shell
     if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
@@ -45,13 +42,13 @@ function doIt() {
     read -p "Run Personal Scripts? (y/n) " -n 1;
     echo "";
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-      brew bundle --file=brewfiles/brewfile_personal;
-      if [ -f ".macos_personal" ]; then
-        bash .macos_personal; #Computername
+      brew bundle --file=brewfiles/personal.brewfile;
+      if [ -f ".setup_files/personal.macos" ]; then
+        bash .setup_files/personal.macos; #Computername
       fi;
     fi;
     echo "updating mac os settings";
-    bash .macos;
+    bash .setup_files/universal.macos;
   else
     echo "brew found; running as update not new install";
     # moved updating to crontab/scripts/nightly.sh;
