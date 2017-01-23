@@ -7,6 +7,7 @@ brew 'mas' # https://github.com/mas-cli/mas
 brew 'nmap' # port tool
 brew 'python3'
 brew 'shellcheck' # https://github.com/koalaman/shellcheck
+brew 'trash'
 #brew 'terminal-notifier' # may use this later
 
 # Application Folder
@@ -27,7 +28,7 @@ cask 'betterzipql' # QL for zips
 cask 'java'
 cask 'qlcolorcode' # Colorize QL
 cask 'qlmarkdown' # QL for .md
-cask 'qlstephen' #
+cask 'qlstephen' # QL for plain text files
 cask 'quicklook-csv' # QL for csv
 
 # Mac App Store
