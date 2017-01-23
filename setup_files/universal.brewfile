@@ -26,6 +26,7 @@ cask 'spectacle' # Window manager
 # Not in Application Folder
 cask 'betterzipql' # QL for zips
 cask 'java'
+cask 'jce-unlimited-strength-policy'
 cask 'qlcolorcode' # Colorize QL
 cask 'qlmarkdown' # QL for .md
 cask 'qlstephen' # QL for plain text files
