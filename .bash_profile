@@ -1,8 +1,10 @@
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults;
+# incase no dot files
+shopt -s nullglob;
 
-for file in ~/.{bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.dotfiles/.[^.]*; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;

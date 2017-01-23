@@ -6,7 +6,6 @@ cd "$(dirname "${BASH_SOURCE[0]}")" || exit;
 function doIt() {
   rsync --exclude ".git/" \
   --exclude ".DS_Store" \
-  --exclude ".osx" \
   --exclude "initialize.sh" \
   --exclude "update.sh" \
   --exclude "README.md" \
@@ -58,6 +57,7 @@ function doIt() {
   for file in ~/crontab/scripts/*; do
     chmod +x "$file";
   done;
+  unset file;
 }
 
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then

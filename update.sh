@@ -2,6 +2,8 @@
 
 #Make sure we can use aliases
 shopt -s expand_aliases;
+# in case no file in folder
+shopt -s nullglob;
 # shellcheck source=/dev/null
 source ~/.bash_profile
 
@@ -12,21 +14,35 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 function doIt() {
   which -s atom
   if [[ $? = 0 ]] ; then
-    #echo "updating atom config files"
+    # pull in atom config files from ~/.atom/
     for file in ~/.atom/{config.cson,init.coffee,keymap.cson,snippets.cson,styles.less}; do
       [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/.atom/
     done;
-    #echo  "updating atom package list"
+    unset file;
     list_atom_packages > .atom/.my_atom_packages
   fi;
-  echo "updating dot files except .gitconfig"
-  for file in ~/.{aliases,bash_profile,bash_prompt,bashrc,exports,extra,functions,gitignore,inputrc,nanorc}; do
+
+  # pull in dotfiles from ~/.dotfiles/
+  for file in ~/.dotfiles/.[^.]*; do
+    if [[ "$file" == */.extra ]]; then
+      continue; # don't sync .extra it isn't tracked
+    fi;
+    [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/.dotfiles/
+  done;
+  unset file;
+
+  # pull in dotfiles from ~/
+  for file in ~/.{bash_profile,bashrc,gitignore,inputrc,nanorc}; do
     [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/
   done;
+  unset file;
+
+  # pull in nanorc language files from ~/.nano/
   for file in ~/.nano/*.nanorc; do
     [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/.nano/
   done;
   echo "updates finished review local repo for changes"
+  unset file;
 }
 
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
