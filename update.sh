@@ -41,6 +41,16 @@ function doIt() {
   for file in ~/.nano/*.nanorc; do
     [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/.nano/
   done;
+
+  # pull in dbeaver configs that exist in repo if exist in ~
+  for file in ./.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/*.prefs; do
+    file_name="$(basename $file)"
+    [ -r ~/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" ] && \
+    [ -f ~/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" ] && \
+    rsync -ciah ~/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" \
+    "$DIR"/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/
+  done;
+
   echo "updates finished review local repo for changes"
   unset file;
 }

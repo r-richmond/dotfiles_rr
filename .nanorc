@@ -2,7 +2,7 @@
 set const
 
 #auto-indent new lines
-set autoindent
+#set autoindent # Haven't figured out how to make paste play nice
 ## Soft tabs
 set tabstospaces
 ## Width 2
