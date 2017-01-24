@@ -80,6 +80,13 @@
   # List contributors with number of commits
   contributors = shortlog --summary --numbered
 
+  # Force Pull Repo the rightway (doesn't change untracked) http://stackoverflow.com/a/8888015
+  pull-force-master = "!read -p \"This will overwrite tracked files in your repo. Are you sure? (y/n) \" -n 1; \
+  echo \"\"; \
+  if [[ $REPLY =~ ^[Yy]$ ]]; then \
+  git fetch --all && git reset --hard origin/master; \
+  fi;"
+
   # Merge GitHub pull request on top of the current branch or,
   # if a branch name is specified, on top of the specified branch
   mpr = "!f() { \
