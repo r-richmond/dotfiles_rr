@@ -12,9 +12,13 @@ You can clone the repository wherever you want. The initialize script will copy 
 git clone https://github.com/r-richmond/dotfiles_rr.git && cd dotfiles_rr && bash initialize.sh
 ```
 
-### Updating
-Pulls [Atom](https://atom.io/) configs, [dotfiles](https://dotfiles.github.io/) from ~/.dotfiles/, & [DBeaver](http://dbeaver.jkiss.org/) configs into local repo directory
-Updates atom_package_list in .atom/package_list
+### Update the local repo
+* [Atom](https://atom.io/) configs
+* Updates list of Atom packages in .atom/.my_atom_packages
+* [DBeaver](http://dbeaver.jkiss.org/) configs
+* [dotfiles](https://dotfiles.github.io/) from ~/.dotfiles/
+* Nano language files from ~/.nano/
+
 ```bash
 bash update.sh
 ```
