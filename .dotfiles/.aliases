@@ -51,8 +51,11 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
 # List current Ip
 alias my_ip="ifconfig | grep \"inet \" | grep -Fv 127.0.0.1 | awk '{print \$2}'"
+#alias my_ip="ifconfig en0 | grep inet | grep -v inet6 | cut -d ' ' -f2"
+alias my_open_ports="nmap -Pn \$(my_ip)" #"echo 'nmap -Pn \$(my_ip)'"
 
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"

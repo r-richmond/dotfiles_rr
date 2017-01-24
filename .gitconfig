@@ -3,7 +3,8 @@
   #http://stackoverflow.com/questions/3321492/git-alias-with-positional-parameters
 
   # list all aliases https://github.com/tj/git-extras/blob/master/bin/git-alias
-  # alias = "!git config --get-regexp 'alias.*' | sed 's/^alias.//' | sed 's/[ ]/ = /';"
+  # sorting from git-extra breaks with a long alias
+  aalias = "!git config --get-regexp 'alias.*' | sed 's/^alias.//' | sed 's/[ ]/ = /';"
 
   # cleanup files with a type change status
   # http://stackoverflow.com/questions/24533390/git-reset-files-with-typechange-status

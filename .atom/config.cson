@@ -21,6 +21,7 @@
   editor:
     invisibles: {}
     preferredLineLength: 120
+    scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
     tabType: "soft"
