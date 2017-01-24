@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo -e ${PATH//:/\\n};
+
 brew update;
 brew upgrade;
 brew cleanup;

@@ -58,6 +58,9 @@ function doIt() {
     chmod +x "$file";
   done;
   unset file;
+
+  # run this if exists | Alternative to git credentials in .extras
+  [ -r ~/update_gitconfig.sh ] && [ -f ~/update_gitconfig.sh ] && bash ~/update_gitconfig.sh;
 }
 
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
