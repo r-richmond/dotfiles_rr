@@ -1,0 +1,17 @@
+SQLEditor.ContentAssistant.insert.case=2
+SQLEditor.autoSaveOnExecute=true
+SQLEditor.closeBrackets=false
+SQLEditor.closeDoubleQuotes=false
+SQLEditor.closeSingleQuotes=false
+SQLEditor.format.keywordCaseAuto=false
+dataformat.profile.country=US
+dataformat.profile.language=en
+dataformat.type.number.useGrouping=false
+eclipse.preferences.version=1
+project.active=General
+qm.maxEntries=2000
+resultset.maxrows=90000
+resultset.presentation.active=spreadsheet
+resultset.read.metadata=false
+resultset.read.references=false
+sql.format.keywordCase=LOWER
