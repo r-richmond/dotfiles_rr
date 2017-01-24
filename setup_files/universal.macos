@@ -14,7 +14,7 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Set computer name (as done via System Preferences → Sharing)
-#HOSTNAME="CoolComputer" #Moved to .macos_personal
+#HOSTNAME="CoolComputer" #Moved to personal.macos #Not tracked see lines 18-21
 #sudo scutil --set ComputerName ${HOSTNAME}
 #sudo scutil --set HostName ${HOSTNAME}
 #sudo scutil --set LocalHostName ${HOSTNAME}

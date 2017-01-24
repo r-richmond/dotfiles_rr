@@ -58,7 +58,7 @@ function doIt() {
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
   doIt;
 else
-  read -p "This may overwrite existing files in your dot files repo. Are you sure? (y/n) " -n 1;
+  read -p "This will overwrite existing files in your dot files repo. Are you sure? (y/n) " -n 1;
   echo "";
   if [[ $REPLY =~ ^[Yy]$ ]]; then
   doIt;
