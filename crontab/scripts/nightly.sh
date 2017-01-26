@@ -2,6 +2,8 @@
 
 echo -e ${PATH//:/\\n};
 
+PATH=/usr/local/bin:$PATH
+
 brew update;
 brew upgrade;
 brew cleanup;

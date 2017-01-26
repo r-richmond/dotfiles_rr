@@ -9,10 +9,15 @@
     useKite: false
     useSnippets: "required"
   core:
-    customFileTypes: {
-      "source.shell": ["extra"]
-      "source.dotfiles": ["nanorc", "brewfile", "macos"]
-    }
+    customFileTypes:
+      "source.dotfiles": [
+        "nanorc"
+        "brewfile"
+        "macos"
+      ]
+      "source.shell": [
+        "extra"
+      ]
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
