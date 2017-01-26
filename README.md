@@ -11,13 +11,28 @@ You can clone the repository wherever you want. The initialize script will copy 
 ```bash
 git clone https://github.com/r-richmond/dotfiles_rr.git && cd dotfiles_rr && bash initialize.sh
 ```
+### Subsequent deploys/intializations
+
+`initialize.sh` behaves a little differently after the first run
+#### Only First Run
+* Install Brew
+* Run all Brew Files
+* Change default shell to brew-installed shell
+* Install all Atom Packages listed in `./.atom/.my_atom_packages`
+* Ask if you want to install personal brew files / personal.macos
+* Run `.setup_files/universal.macos` to configure macos
+
+#### All Runs (Including First)
+* Copy all dotfiles to ~/
+ * This excludes .extras & personal.macos (used for Computer Name)
+* Reassigns Crontab
 
 ### Update the local repo
 * [Atom](https://atom.io/) configs
 * Updates list of Atom packages in .atom/.my_atom_packages
 * [DBeaver](http://dbeaver.jkiss.org/) configs
 * [dotfiles](https://dotfiles.github.io/) from ~/.dotfiles/
-* Nano language files from ~/.nano/
+* [Nano](https://www.nano-editor.org/overview.php) language files from ~/.nano/
 
 ```bash
 bash update.sh

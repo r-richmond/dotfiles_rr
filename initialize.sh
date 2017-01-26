@@ -50,7 +50,6 @@ function doIt() {
     bash .setup_files/universal.macos;
   else
     echo "brew found; running as update not new install";
-    # moved updating to crontab/scripts/nightly.sh;
   fi;
   echo "assigning crontab";
   crontab ~/crontab/crontab;
