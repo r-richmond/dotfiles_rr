@@ -23,30 +23,45 @@ function default_xml_to_bin() {
 # Determine size of a file or total size of a directory
 function fs() {
   if du -b /dev/null > /dev/null 2>&1; then
-  local arg=-sbh;
+    local arg=-sbh;
   else
-  local arg=-sh;
-  fi
+    local arg=-sh;
+  fi;
   if [[ -n "$@" ]]; then
-  du $arg -- "$@";
+    du $arg -- "$@";
   else
-  du $arg .[^.]* ./*;
+    du $arg .[^.]* ./*;
   fi;
 }
 
 function json() {
   if [ -t 0 ]; then # argument
-  python -mjson.tool <<< "$*" | pygmentize -l javascript;
+    python -mjson.tool <<< "$*" | pygmentize -l javascript;
   else # pipe
-  python -mjson.tool | pygmentize -l javascript;
+    python -mjson.tool | pygmentize -l javascript;
+  fi;
+}
+
+# Diff 2 directories ingoring binaries #http://stackoverflow.com/a/9752856
+function diff_folders() {
+  diff -r $1 $d2 | sed '/Binary\ files\ /d' > ~/Desktop/folder_diff_results
+}
+
+# `a` with no arguments opens the current directory in Atom Editor, otherwise
+# opens the given location
+function a() {
+  if [ $# -eq 0 ]; then
+    atom .;
+  else
+    atom "$@";
   fi;
 }
 
 function o() {
   if [ $# -eq 0 ]; then
-  open .;
+    open .;
   else
-  open "$@";
+    open "$@";
   fi;
 }
 
