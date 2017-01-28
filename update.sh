@@ -22,6 +22,15 @@ function doIt() {
     list_atom_packages > .atom/.my_atom_packages
   fi;
 
+  # pull in dbeaver configs that exist in repo if exist in ~
+  for file in ./.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/*.prefs; do
+    file_name="$(basename $file)"
+    [ -r ~/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" ] && \
+    [ -f ~/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" ] && \
+    rsync -ciah ~/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" \
+    "$DIR"/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/
+  done;
+
   # pull in dotfiles from ~/.dotfiles/
   for file in ~/.dotfiles/.[^.]*; do
     if [[ "$file" == */.extra ]]; then
@@ -37,18 +46,15 @@ function doIt() {
   done;
   unset file;
 
+  # pull in python idle changes
+  for file in ~/.idlerc/{config-highlight.cfg,config-main.cfg}; do
+    [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/.idlerc/
+  done;
+  unset file;
+
   # pull in nanorc language files from ~/.nano/
   for file in ~/.nano/*.nanorc; do
     [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/.nano/
-  done;
-
-  # pull in dbeaver configs that exist in repo if exist in ~
-  for file in ./.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/*.prefs; do
-    file_name="$(basename $file)"
-    [ -r ~/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" ] && \
-    [ -f ~/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" ] && \
-    rsync -ciah ~/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" \
-    "$DIR"/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/
   done;
 
   echo "updates finished review local repo for changes"
