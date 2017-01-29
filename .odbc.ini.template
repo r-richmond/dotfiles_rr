@@ -1,0 +1,19 @@
+[ODBC Data Sources]
+GoPostal = Postgres
+
+[GoPostal]
+Driver           = /usr/local/Cellar/psqlodbc/09.05.0400_1/lib/psqlodbcw.so
+Description      = Test to Postgres
+Trace            = Yes
+TraceFile        = sql.log
+Database         = dev
+Servername       = localhost
+UserName         =
+Password         =
+Port             = 5432
+Protocol         = 6.5
+ReadOnly         = No
+RowVersioning    = No
+ShowSystemTables = No
+ShowOidColumn    = No
+FakeOidIndex     = No
