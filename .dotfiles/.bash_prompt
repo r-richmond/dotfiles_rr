@@ -47,10 +47,10 @@ prompt_git() {
       # Check for changes behind & after
       gitstatus=$(git status 2> /dev/null)
       if [[ $gitstatus == *"behind"* ]]; then
-        s+='--';
+        s+='<-';
       fi;
       if [[ $gitstatus == *"ahead"* ]]; then
-        s+='++';
+        s+='->';
       fi;
     fi;
 
