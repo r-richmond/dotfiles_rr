@@ -17,6 +17,7 @@
       ]
       "source.shell": [
         "extra"
+        "completions"
       ]
     telemetryConsent: "no"
     themes: [
