@@ -57,6 +57,11 @@ function doIt() {
     [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/.nano/
   done;
 
+  # pull in pip config file
+  for file in ~/Library/Application\ Support/pip/*.conf; do
+    [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/Library/Application\ Support/pip/
+  done;
+
   echo "updates finished review local repo for changes"
   unset file;
 }
