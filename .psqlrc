@@ -99,6 +99,7 @@
 \echo 'Console Commands:'
 \echo '\t:menu\t\t-- Help Menu'
 \echo '\t:settings\t-- Server Settings'
+\echo '\t\\e\t\t-- View and edit your last run query '
 \echo '\t\\h\t\t-- Help with SQL commands'
 \echo '\t\\?\t\t-- Help with psql commands'
 \echo '\t\\q\t\t-- Quit\n'
