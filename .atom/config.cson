@@ -19,6 +19,9 @@
         "extra"
         "completions"
       ]
+      "source.sql": [
+        "psqlrc"
+      ]
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
