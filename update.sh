@@ -62,6 +62,9 @@ function doIt() {
     [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/Library/Application\ Support/pip/
   done;
 
+  # pull in psqlrc config file
+  [ -r "$HOME/.psqlrc" ] && [ -f "$HOME/.psqlrc" ] && rsync -ciah "$HOME/.psqlrc" "$DIR""/.psqlrc"
+
   echo "updates finished review local repo for changes"
   unset file;
 }
