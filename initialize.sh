@@ -11,6 +11,7 @@ function doIt() {
   --exclude "README.md" \
   --exclude "LICENSE-MIT.txt" \
   --exclude "setup_files/" \
+  --exclude "misc_notes/" \
   --exclude ".atom/.my_atom_packages" \
   -avh --no-perms . ~;
 
