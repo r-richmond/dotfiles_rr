@@ -24,6 +24,15 @@
 `kinit -k -t {path}/name.keytab`  
 `klist` to check and see how it went
 
+#### Making Chrome Play Ball
+
+1. Make sure you have tickit `kinit`
+1. `defaults write com.google.Chrome AuthServerWhitelist “*.example.com”`
+1. `defaults write com.google.Chrome AuthNegotiateDelegateWhitelist “*.example.com”`
+`
+1. Vist `chrome://policy/` to review  
+Sources: [1](https://www.jeffgeerling.com/blogs/jeff-geerling/kerberos-authentication-mac-os), [2](http://sachinparmarblog.com/kerberos-authentication-on-mac-os-x-with-google-chrome/)
+
 #### Mac Specific
 `export KRB5CCNAME=/etc/krb5.conf;`  
 sample in `./Kerberos/krb5.conf`

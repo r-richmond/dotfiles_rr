@@ -110,3 +110,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# Logged In User
+alias logged_in_user="ls -l /dev/console | awk '{ print \$3 }'"
+alias logged_in_user_home="dscl . -read /Users/\$(logged_in_user) NFSHomeDirectory | awk '{print \$NF}'"
