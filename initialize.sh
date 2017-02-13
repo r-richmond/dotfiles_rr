@@ -8,6 +8,7 @@ function doIt() {
   --exclude ".DS_Store" \
   --exclude "initialize.sh" \
   --exclude "update.sh" \
+  --exclude "Linux/" \
   --exclude "README.md" \
   --exclude "LICENSE-MIT.txt" \
   --exclude "setup_files/" \
@@ -52,6 +53,7 @@ function doIt() {
   else
     echo "brew found; running as update not new install";
   fi;
+
   echo "assigning crontab";
   crontab ~/crontab/crontab;
   for file in ~/crontab/scripts/*; do

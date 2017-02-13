@@ -1,4 +1,5 @@
 # Application Folder
+cask 'discord'
 cask 'dropbox'
 cask 'transmission'
 cask 'tunnelblick'

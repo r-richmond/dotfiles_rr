@@ -114,3 +114,6 @@ alias path='echo -e ${PATH//:/\\n}'
 # Logged In User
 alias logged_in_user="ls -l /dev/console | awk '{ print \$3 }'"
 alias logged_in_user_home="dscl . -read /Users/\$(logged_in_user) NFSHomeDirectory | awk '{print \$NF}'"
+
+# Kill ARD Locked Screen
+alias i_locked_myself_out="ps -ax | grep AppleVNCServer && echo && echo Contents/MacOS/LockScreen && echo sudo_kill_-9_PID"
