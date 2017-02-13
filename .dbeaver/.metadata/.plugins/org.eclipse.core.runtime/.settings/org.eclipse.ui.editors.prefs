@@ -3,6 +3,7 @@ lineNumberRuler=true
 overviewRuler_migration=migrated_3.1
 printMargin=true
 printMarginColumn=120
+quickdiff.quickDiff=true
 showWhitespaceCharacters=true
 spacesForTabs=true
 tabWidth=2

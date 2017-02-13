@@ -17,3 +17,4 @@ resultset.presentation.active=spreadsheet
 resultset.read.metadata=false
 resultset.read.references=false
 sql.format.keywordCase=LOWER
+sql.parameter.prefix=$
