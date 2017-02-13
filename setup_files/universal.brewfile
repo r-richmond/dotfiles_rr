@@ -16,6 +16,7 @@ cask 'atom' # Text editor
 cask 'dropbox'
 cask 'cheatsheet' # Shows shortcuts by holding down cmd
 cask 'coderunner'
+cask 'cyberduck' # remote file access
 cask 'dash' # Documentation
 cask 'iterm2' # Terminal alternative
 cask 'github-desktop' # GUI for github
