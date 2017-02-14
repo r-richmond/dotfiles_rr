@@ -21,6 +21,7 @@ cask 'dash' # Documentation
 cask 'iterm2' # Terminal alternative
 cask 'github-desktop' # GUI for github
 cask 'google-chrome'
+cask 'launchrocket' # https://github.com/jimbojsb/launchrocket
 cask 'licecap' # Screenrecording software
 cask 'postgres'
 cask 'pycharm' # Python IDE

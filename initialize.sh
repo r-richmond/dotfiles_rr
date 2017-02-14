@@ -50,6 +50,18 @@ function doIt() {
     fi;
     echo "updating mac os settings";
     bash .setup_files/universal.macos;
+
+    echo "Configuring Python Make Sure Python3 is first in Path";
+    export PIP_REQUIRE_VIRTUALENV="";
+    pip install --upgrade pip;
+    pip install --upgrade setuptools;
+    pip install virtualenv;
+    pip install virtualenvwrapper;
+    export PIP_REQUIRE_VIRTUALENV=true;
+    # Make Python Directories
+    [ ! -d ~/python3_virtual_envs ] && mkdir ~/python3_virtual_envs;
+    [ ! -d ~/projects ] && mkdir ~/projects;
+    [ ! -d ~/projects/python ] && mkdir ~/projects/python;
   else
     echo "brew found; running as update not new install";
   fi;

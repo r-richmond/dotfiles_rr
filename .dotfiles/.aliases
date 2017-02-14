@@ -117,3 +117,11 @@ alias logged_in_user_home="dscl . -read /Users/\$(logged_in_user) NFSHomeDirecto
 
 # Kill ARD Locked Screen
 alias i_locked_myself_out="ps -ax | grep AppleVNCServer && echo && echo Contents/MacOS/LockScreen && echo sudo_kill_-9_PID"
+
+alias help_python_venv="echo 'mkvirtualenv foo makes a new virtual env'; \
+  echo 'mkproject myproject creates new project in PROJECT_HOME'; \
+  echo '~/projects/python is default location for new projects'; \
+  echo 'workon foo creates / activates new virtual env / cd-s into project'; \
+  echo 'deactivate foo deactivates virtual env'; \
+  echo 'rmvirtualenv foo deletes a virtual env'; \
+  echo 'lsvirtualenv lists all virtual env';"
