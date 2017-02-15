@@ -89,10 +89,6 @@ fi;
 # Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
 export PYTHONIOENCODING='UTF-8';
 
-# https://hackercodex.com/guide/python-development-environment-on-mac-osx/
-# pip should only run if there is a virtualenv currently activated
-export PIP_REQUIRE_VIRTUALENV=true
-
 # Increase Bash history size. Allow 32³ entries; the default is 500.
 export HISTSIZE='32768';
 export HISTFILESIZE="${HISTSIZE}";
@@ -139,11 +135,6 @@ function fs() {
   else
     du $arg .[^.]* ./*;
   fi;
-}
-
-# for global pip https://hackercodex.com/guide/python-development-environment-on-mac-osx/
-function gpip(){
-  PIP_REQUIRE_VIRTUALENV="" ; pip "$@" ; PIP_REQUIRE_VIRTUALENV=true;
 }
 
 ########################
