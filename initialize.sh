@@ -62,6 +62,12 @@ function doIt() {
     [ ! -d ~/python3_virtual_envs ] && mkdir ~/python3_virtual_envs;
     [ ! -d ~/projects ] && mkdir ~/projects;
     [ ! -d ~/projects/python ] && mkdir ~/projects/python;
+
+    echo "Configuring autocomplete Docker";
+    [ -d /usr/local/etc/bash_completion.d ] && cd /usr/local/etc/bash_completion.d || exit;
+    [ ! -f docker.bash-completion ] && ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion;
+    [ ! -f docker-machine.bash-completion ] && ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
+    [ ! -f docker-compose.bash-completion ] && ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
   else
     echo "brew found; running as update not new install";
   fi;

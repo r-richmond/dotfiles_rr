@@ -18,6 +18,7 @@ cask 'cheatsheet' # Shows shortcuts by holding down cmd
 cask 'coderunner'
 cask 'cyberduck' # remote file access
 cask 'dash' # Documentation
+cask 'docker'
 cask 'iterm2' # Terminal alternative
 cask 'github-desktop' # GUI for github
 cask 'google-chrome'

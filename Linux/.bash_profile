@@ -143,7 +143,7 @@ function fs() {
 
 # for global pip https://hackercodex.com/guide/python-development-environment-on-mac-osx/
 function gpip(){
-   PIP_REQUIRE_VIRTUALENV="" && pip "$@" ; PIP_REQUIRE_VIRTUALENV=true;
+  PIP_REQUIRE_VIRTUALENV="" ; pip "$@" ; PIP_REQUIRE_VIRTUALENV=true;
 }
 
 ########################

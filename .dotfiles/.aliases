@@ -124,4 +124,5 @@ alias help_python_venv="echo 'mkvirtualenv foo makes a new virtual env'; \
   echo 'workon foo creates / activates new virtual env / cd-s into project'; \
   echo 'deactivate foo deactivates virtual env'; \
   echo 'rmvirtualenv foo deletes a virtual env'; \
-  echo 'lsvirtualenv lists all virtual env';"
+  echo 'lsvirtualenv lists all virtual env'; \
+  echo 'gpip to ignore virtualenv requirement';"
