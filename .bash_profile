@@ -5,6 +5,8 @@
 [ -d "/usr/local/mysql/bin" ] && export PATH="/usr/local/mysql/bin:$PATH";
 # check whether the current user has a $HOME/bin and if so add it to the PATH
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH";
+# check whether the postgres app and add it to the path if it exists
+[ -d "/Applications/Postgres.app" ] &&  export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH";
 # remove duplicates from the path
 export PATH=`awk -F: '{for(i=1;i<=NF;i++){if(!($i in a)){a[$i];printf s$i;s=":"}}}'<<<$PATH`;
 
