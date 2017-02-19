@@ -13,6 +13,7 @@ alias -- -="cd -"
 # List Atom Packages
 # http://evanhahn.com/atom-apm-install-list/
 alias list_atom_packages="apm list --installed --bare | grep '^[^@]\+' -o"
+alias list_functions="cat ~/.dotfiles/.functions"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

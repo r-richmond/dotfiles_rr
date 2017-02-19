@@ -15,6 +15,9 @@
         "brewfile"
         "macos"
       ]
+      "source.git-config": [
+        "cfg"
+      ]
       "source.shell": [
         "extra"
         "completions"
