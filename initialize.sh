@@ -60,8 +60,8 @@ function doIt() {
     export PIP_REQUIRE_VIRTUALENV=true;
     # Make Python Directories
     [ ! -d ~/python3_virtual_envs ] && mkdir ~/python3_virtual_envs;
-    [ ! -d ~/projects ] && mkdir ~/projects;
-    [ ! -d ~/projects/python ] && mkdir ~/projects/python;
+    [ ! -d ~/Dropbox ] && mkdir ~/Dropbox;
+    [ ! -d ~/Dropbox/python ] && mkdir ~/Dropbox/python;
 
     echo "Configuring autocomplete Docker";
     [ -d /usr/local/etc/bash_completion.d ] && cd /usr/local/etc/bash_completion.d || exit;
