@@ -8,6 +8,7 @@ brew 'nmap' # port tool
 brew 'python3'
 brew 'shellcheck' # https://github.com/koalaman/shellcheck
 brew 'trash'
+brew 'tree'
 brew 'unixodbc'
 #brew 'terminal-notifier' # may use this later
 
