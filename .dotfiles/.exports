@@ -27,7 +27,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 # http://docs.python-guide.org/en/latest/dev/virtualenvs/
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export WORKON_HOME=~/python3_virtual_envs
-export PROJECT_HOME=~/Dropbox/python
+export PROJECT_HOME=~/Dropbox/projects/python
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Increase Bash history size. Allow 32³ entries; the default is 500.
