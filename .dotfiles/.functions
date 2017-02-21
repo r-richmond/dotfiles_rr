@@ -126,3 +126,10 @@ camerausedby() {
 function tree_directory() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# makes an animated gif out of images in a directory https://github.com/gjreda/dotfiles/blob/master/.functions
+gifme () {
+  ffmpeg -f image2 -r 10 -i %d.png -s 480x360 -filter:v "setpts=3.0*PTS" animate.avi
+  convert -delay 25 -loop 0 animate.avi "$1.gif"
+  rm animate.avi
+}
