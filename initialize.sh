@@ -17,7 +17,7 @@ function doIt() {
   -avh --no-perms . ~;
 
   # shellcheck source=/dev/null
-  source ~/.bash_profile
+  source ~/.bash_profile;
 
   # Check if Homebrew is installed
   which -s brew
@@ -66,8 +66,8 @@ function doIt() {
     echo "Configuring autocomplete Docker";
     [ -d /usr/local/etc/bash_completion.d ] && cd /usr/local/etc/bash_completion.d || exit;
     [ ! -f docker.bash-completion ] && ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion;
-    [ ! -f docker-machine.bash-completion ] && ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
-    [ ! -f docker-compose.bash-completion ] && ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
+    [ ! -f docker-machine.bash-completion ] && ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion;
+    [ ! -f docker-compose.bash-completion ] && ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion;
   else
     echo "brew found; running as update not new install";
   fi;

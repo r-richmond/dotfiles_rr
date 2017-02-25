@@ -5,11 +5,11 @@ shopt -s expand_aliases;
 # in case no file in folder
 shopt -s nullglob;
 # shellcheck source=/dev/null
-source ~/.bash_profile
+source ~/.bash_profile;
 
 # Move files
 # cd "$(dirname "${BASH_SOURCE}")";
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
 
 function doIt() {
   which -s atom
@@ -19,7 +19,7 @@ function doIt() {
       [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/.atom/
     done;
     unset file;
-    list_atom_packages > .atom/.my_atom_packages
+    list_atom_packages > .atom/.my_atom_packages;
   fi;
 
   # pull in dbeaver configs that exist in repo if exist in ~
