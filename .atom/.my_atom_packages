@@ -8,6 +8,7 @@ git-plus
 git-time-machine
 hyperclick
 language-crontab
+language-docker
 language-dotfiles
 language-protobuf
 language-swift
