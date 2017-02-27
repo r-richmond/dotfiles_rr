@@ -133,5 +133,5 @@ alias help_python_venv="echo 'mkvirtualenv foo makes a new virtual env'; \
   echo 'gpip to ignore virtualenv requirement';"
 
 # Docker Aliases
-alias docker_rm_images_all="docker rmi `docker images -q`";
-alias docker_rm_containers_all="docker rm `docker ps -a -q`";
+alias docker_rm_images_all="docker rmi \`docker images -q\`";
+alias docker_rm_containers_all="docker rm \`docker ps -a -q\`";
