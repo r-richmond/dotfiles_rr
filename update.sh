@@ -23,12 +23,12 @@ function doIt() {
   fi;
 
   # pull in dbeaver configs that exist in repo if exist in ~
-  for file in ./.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/*.prefs; do
+  for file in ./.dbeaver4/.metadata/.plugins/org.eclipse.core.runtime/.settings/*.prefs; do
     file_name="$(basename $file)"
-    [ -r ~/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" ] && \
-    [ -f ~/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" ] && \
-    rsync -ciah ~/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" \
-    "$DIR"/.dbeaver/.metadata/.plugins/org.eclipse.core.runtime/.settings/
+    [ -r ~/.dbeaver4/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" ] && \
+    [ -f ~/.dbeaver4/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" ] && \
+    rsync -ciah ~/.dbeaver4/.metadata/.plugins/org.eclipse.core.runtime/.settings/"$file_name" \
+    "$DIR"/.dbeaver4/.metadata/.plugins/org.eclipse.core.runtime/.settings/
   done;
 
   # pull in dotfiles from ~/.dotfiles/
