@@ -18,4 +18,5 @@ merge-conflicts
 minimap
 minimap-find-and-replace
 minimap-git-diff
+sort-lines
 split-diff
