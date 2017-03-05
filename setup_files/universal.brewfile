@@ -20,10 +20,11 @@ cask 'coderunner'
 cask 'cyberduck' # remote file access
 cask 'dash' # Documentation
 cask 'docker'
-cask 'iterm2' # Terminal alternative
 cask 'github-desktop' # GUI for github
 cask 'google-chrome'
-cask 'kitematic' # docker 
+cask 'iterm2' # Terminal alternative
+cask 'keycastr' # Key casting
+cask 'kitematic' # docker
 cask 'launchrocket' # https://github.com/jimbojsb/launchrocket
 cask 'licecap' # Screenrecording software
 cask 'postgres'
