@@ -5,6 +5,7 @@ brew 'git-extras' # https://github.com/tj/git-extras
 brew 'git-open' # https://github.com/jeffreyiacono/git-open
 brew 'mas' # https://github.com/mas-cli/mas
 brew 'nmap' # port tool
+brew 'npm'
 brew 'python3'
 brew 'shellcheck' # https://github.com/koalaman/shellcheck
 brew 'trash'

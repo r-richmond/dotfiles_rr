@@ -28,6 +28,7 @@ git clone https://github.com/r-richmond/dotfiles_rr.git && cd dotfiles_rr && bas
 * Reassigns Crontab
 
 ### Update the local repo
+`update.sh` behaves the same every run
 * [Atom](https://atom.io/) configs
 * Updates list of Atom packages in .atom/.my_atom_packages
 * [DBeaver](http://dbeaver.jkiss.org/) configs
@@ -36,9 +37,9 @@ git clone https://github.com/r-richmond/dotfiles_rr.git && cd dotfiles_rr && bas
 * [pip.conf] (https://pip.pypa.io/en/stable/user_guide/#config-file)
 * [.psqlrc] (https://robots.thoughtbot.com/an-explained-psqlrc)
 
-```bash
-bash update.sh
-```
+## Things left to do
+* add caps to esc-key setting
+* turnoff mission control key settings for ctrl-up/down
 
 ## Thanks to…
 
