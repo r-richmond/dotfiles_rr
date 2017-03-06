@@ -55,6 +55,9 @@ export LESS_TERMCAP_md="${yellow}";
 # Kerberos https://web.mit.edu/kerberos/krb5-latest/doc/basic/ccache_def.html
 export KRB5CCNAME=/etc/krb5.conf;
 
+# Java home
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 # CLI Color
 # see .aliases
 # export CLICOLOR=1
