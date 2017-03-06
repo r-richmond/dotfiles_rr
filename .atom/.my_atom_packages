@@ -13,6 +13,7 @@ language-dotfiles
 language-protobuf
 language-swift
 linter
+linter-docker
 linter-shellcheck
 merge-conflicts
 minimap
