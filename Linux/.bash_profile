@@ -102,7 +102,7 @@ export HISTCONTROL='ignoreboth';
 export HISTTIMEFORMAT='%F %T '
 
 # Don't record some commands
-export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear:mail"
 
 # Prefer US English and use UTF-8.
 export LANG='en_US.UTF-8';
