@@ -2,11 +2,13 @@ an-old-hope-syntax
 atom-beautify
 autocomplete-python
 autocomplete-swift
+busy-signal
 dash
 file-icons
 git-plus
 git-time-machine
 hyperclick
+intentions
 language-crontab
 language-docker
 language-dotfiles
@@ -15,6 +17,7 @@ language-swift
 linter
 linter-docker
 linter-shellcheck
+linter-ui-default
 merge-conflicts
 minimap
 minimap-find-and-replace
