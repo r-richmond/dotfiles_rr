@@ -124,7 +124,10 @@ alias logged_in_user_home="dscl . -read /Users/\$(logged_in_user) NFSHomeDirecto
 alias i_locked_myself_out="ps -ax | grep AppleVNCServer && echo && echo Contents/MacOS/LockScreen && echo sudo_kill_-9_PID"
 
 # workoff to deactivate and go home
-alias workoff='deactivate && cd ~'
+alias workoff='deactivate && cd ~';
+
+# remove links https://gist.github.com/tevino/1a557a0c200d61d4e4fb
+alias removevirtualenvlinks='find . -type l -delete';
 
 # Colors from .bash_prompt
 alias help_python_venv="echo '${green}mkvirtualenv foo${reset} makes a new virtual env'; \
@@ -135,6 +138,7 @@ alias help_python_venv="echo '${green}mkvirtualenv foo${reset} makes a new virtu
   echo '${green}rmvirtualenv foo${reset} deletes a virtual env'; \
   echo '${green}lsvirtualenv${reset} lists all virtual env'; \
   echo '${green}setvirtualenvproject${reset} to associate current directory with active virtual env'; \
+  echo '${green}removevirtualenvlinks${reset} cd to project, delete links, then recreate with ${green}mkvirtualenv${reset}'; \
   echo '${green}gpip${reset} to ignore virtualenv requirement';"
 
 # Docker Aliases
