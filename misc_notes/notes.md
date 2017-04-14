@@ -34,7 +34,7 @@
 Sources: [1](https://www.jeffgeerling.com/blogs/jeff-geerling/kerberos-authentication-mac-os), [2](http://sachinparmarblog.com/kerberos-authentication-on-mac-os-x-with-google-chrome/)
 
 #### Mac Specific
-`export KRB5CCNAME=/etc/krb5.conf;`  
+place krbt.conf in /etc/
 sample in `./Kerberos/krb5.conf`
 
 #### Windows Specific
