@@ -7,6 +7,11 @@
 1. run `bash ~/update_gitconfig.sh` to switch
 1. run `git whoami` when you forget
 
+## JDBC URLS
+
+hive `jdbc:hive2://{host}:{port}/{database};AuthMech=1;KrbRealm=FOO.BAR;KrbHostFQDN={server};KrbServiceName=hive;`
+impala `jdbc:impala://{host}:{port};AuthMech=1;KrbRealm=FOO.BAR;KrbHostFQDN={server};KrbServiceName=impala;KrbAuthType=2;`
+
 ## ODBC
 
 #### Getting Started with ODBC on Mac for pyodbc
@@ -26,7 +31,7 @@
 
 #### Making Chrome Play Ball
 
-1. Make sure you have tickit `kinit`
+1. Make sure you have ticket `kinit`
 1. `defaults write com.google.Chrome AuthServerWhitelist “*.example.com”`
 1. `defaults write com.google.Chrome AuthNegotiateDelegateWhitelist “*.example.com”`
 `
@@ -34,7 +39,7 @@
 Sources: [1](https://www.jeffgeerling.com/blogs/jeff-geerling/kerberos-authentication-mac-os), [2](http://sachinparmarblog.com/kerberos-authentication-on-mac-os-x-with-google-chrome/)
 
 #### Mac Specific
-place krbt.conf in /etc/
+place krb5.conf in /etc/
 sample in `./Kerberos/krb5.conf`
 
 #### Windows Specific
