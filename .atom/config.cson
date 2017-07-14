@@ -17,6 +17,7 @@
       ]
       "source.git-config": [
         "cfg"
+        "ini"
       ]
       "source.shell": [
         "extra"
