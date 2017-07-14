@@ -130,6 +130,7 @@ alias workoff='deactivate && cd ~';
 alias removevirtualenvlinks='find . -type l -delete';
 
 # Colors from .bash_prompt
+source ~/.dotfiles/.bash_prompt;
 alias help_python_venv="echo '${green}mkvirtualenv foo${reset} makes a new virtual env'; \
   echo '${green}mkproject foo${reset} creates foo in PROJECT_HOME ($PROJECT_HOME)'; \
   echo '${green}workon foo${reset} creates / activates new virtual env / cd into project'; \
