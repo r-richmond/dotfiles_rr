@@ -26,6 +26,7 @@
       "source.sql": [
         "psqlrc"
         "tdload"
+        "tbuild"
       ]
     telemetryConsent: "no"
     themes: [
