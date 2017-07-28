@@ -27,8 +27,8 @@ function doIt() {
     # https://github.com/mxcl/homebrew/wiki/installation
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
     # Install new bash and other things
-    brew bundle --file=brewfiles/universal.brewfile;
-    brew install homebrew/versions/bash-completion2;
+    brew bundle --file=setup_files/universal.brewfile;
+    brew install bash-completion@2;
     # Switch to using brew-installed bash as default shell
     if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
       # Add the new shell to the list of allowed shells
@@ -43,13 +43,13 @@ function doIt() {
     read -p "Run Personal Scripts? (y/n) " -n 1;
     echo "";
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-      brew bundle --file=brewfiles/personal.brewfile;
-      if [ -f ".setup_files/personal.macos" ]; then
-        bash .setup_files/personal.macos; #Computername
+      brew bundle --file=setup_files/personal.brewfile;
+      if [ -f "setup_files/personal.macos" ]; then
+        bash setup_files/personal.macos; #Computername
       fi;
     fi;
     echo "updating mac os settings";
-    bash .setup_files/universal.macos;
+    bash setup_files/universal.macos;
 
     echo "Configuring Python Make Sure Python3 is first in Path";
     export PIP_REQUIRE_VIRTUALENV="";

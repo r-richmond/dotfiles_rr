@@ -14,6 +14,7 @@ brew 'shellcheck' # https://github.com/koalaman/shellcheck
 brew 'trash'
 brew 'tree'
 brew 'unixodbc'
+brew 'nano'
 #brew 'terminal-notifier' # may use this later
 
 # Application Folder
@@ -49,5 +50,5 @@ mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Xcode', id: 497799835
 
 #Dupes
-tap 'homebrew/dupes'
-brew 'homebrew/dupes/nano'
+#tap 'homebrew/dupes'
+#brew 'homebrew/dupes/nano' # depreciated but left syntax guide
