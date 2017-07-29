@@ -1,7 +1,7 @@
 # Application Folder
 cask 'discord'
 cask 'dropbox'
-cask 'gitter'
+# cask 'gitter'
 cask 'transmission'
 cask 'tunnelblick'
 cask 'vlc'

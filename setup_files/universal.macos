@@ -74,20 +74,22 @@ defaults write NSGlobalDomain com.apple.scrollwheel.scaling -float 0.6875
 #sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
 
 # Do not show password hints
-defaults write /Library/Preferences/com.apple.loginwindow RetriesUntilHint -int 0
+sudo defaults write /Library/Preferences/com.apple.loginwindow RetriesUntilHint -int 0;
 
 # Disable guest account login
-defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
+sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false;
 
 # Destroy FileVault key when going into standby mode, forcing a re-auth.
 # Source: https://web.archive.org/web/20160114141929/http://training.apple.com/pdf/WP_FileVault2.pdf
-pmset destroyfvkeyonstandby 1
+sudo pmset destroyfvkeyonstandby 1;
 
 # Log authentication events for 90 days
-perl -p -i -e 's/rotate=seq file_max=5M all_max=20M/rotate=utc file_max=5M ttl=90/g' "/etc/asl/com.apple.authd"
+# this is broken in 10.12
+# perl -p -i -e 's/rotate=seq file_max=5M all_max=20M/rotate=utc file_max=5M ttl=90/g' "/etc/asl/com.apple.authd"
 
 # Log installation events for a year
-perl -p -i -e 's/format=bsd/format=bsd mode=0640 rotate=utc compress file_max=5M ttl=365/g' "/etc/asl/com.apple.install"
+# this is broken in 10.12
+# perl -p -i -e 's/format=bsd/format=bsd mode=0640 rotate=utc compress file_max=5M ttl=365/g' "/etc/asl/com.apple.install"
 
 
 ###############################################################################
@@ -342,7 +344,7 @@ tell application "Terminal"
   local allOpenedWindows
   local initialOpenedWindows
   local windowID
-  set themeName to "Solarized Dark xterm-256color"
+  set themeName to "solarized-dark-xterm-256color"
   (* Store the IDs of all the open terminal windows. *)
   set initialOpenedWindows to id of every window
   (* Open the custom theme so that it gets added to the list
@@ -371,7 +373,7 @@ end tell
 EOD
 
 # Install the Solarized Dark theme for iTerm
-open "${HOME}/terminal_themes/Solarized Dark.itermcolors"
+open "${HOME}/terminal_themes/solarized-dark.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
@@ -450,16 +452,16 @@ defaults write org.m0k.transmission RandomPort -bool true
 # ==============================================
 
 # Archive Utility
-ln -s "/System/Library/CoreServices/Archive Utility.app" "/Applications/Utilities/Archive Utility.app"
+sudo ln -s "/System/Library/CoreServices/Archive Utility.app" "/Applications/Utilities/Archive Utility.app"
 
 # Directory Utility
-ln -s "/System/Library/CoreServices/Directory Utility.app" "/Applications/Utilities/Directory Utility.app"
+sudo ln -s "/System/Library/CoreServices/Directory Utility.app" "/Applications/Utilities/Directory Utility.app"
 
 # Screen Sharing
-ln -s "/System/Library/CoreServices/Screen Sharing.app" "/Applications/Utilities/Screen Sharing.app"
+sudo ln -s "/System/Library/CoreServices/Screen Sharing.app" "/Applications/Utilities/Screen Sharing.app"
 
 # Ticket Viewer
-ln -s "/System/Library/CoreServices/Ticket Viewer.app" "/Applications/Utilities/Ticket Viewer.app"
+sudo ln -s "/System/Library/CoreServices/Ticket Viewer.app" "/Applications/Utilities/Ticket Viewer.app"
 
 ###############################################################################
 # Kill affected applications                                                  #

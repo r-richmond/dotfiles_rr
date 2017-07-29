@@ -17,7 +17,7 @@
 #  Min  |  Hour  |  Mday  |  Month  |  Wday  |  Command               #
 #=====================================================================#
 #  *       *        *        *         *        $HOME/bin/gmail.rb
-   3       0        *        *         *        $HOME/crontab/scripts/nightly.sh
+   3       0        *        *         6        $HOME/crontab/scripts/update_tools.sh
 #  0       *        *        *         *        $HOME/crontab/dotfiles/cron/every-hour.sh
 #  0       0        *        *         0        $HOME/crontab/dotfiles/cron/twice-a-week.sh
 #  0       0        *        *         4        $HOME/crontab/dotfiles/cron/twice-a-week.sh

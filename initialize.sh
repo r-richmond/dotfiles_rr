@@ -28,7 +28,8 @@ function doIt() {
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
     # Install new bash and other things
     brew bundle --file=setup_files/universal.brewfile;
-    brew install bash-completion@2;
+    brew install bash-completion2;
+    brew install grep --with-default-names;
     # Switch to using brew-installed bash as default shell
     if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
       # Add the new shell to the list of allowed shells
@@ -49,6 +50,8 @@ function doIt() {
       fi;
     fi;
     echo "updating mac os settings";
+    # enable dark mode from brew
+    dark-mode on;
     bash setup_files/universal.macos;
 
     echo "Configuring Python Make Sure Python3 is first in Path";
