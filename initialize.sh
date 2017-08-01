@@ -21,7 +21,7 @@ function doIt() {
 
   # Check if Homebrew is installed
   which -s brew
-  if [[ $? != 0 ]] ; then
+  if [[ $? != 0 ]] || [ "$FORCENEW" -eq 1 ] ; then
     echo "no brew found; running as new install";
     # Install Homebrew
     # https://github.com/mxcl/homebrew/wiki/installation
@@ -85,6 +85,10 @@ function doIt() {
   # run this if exists | Alternative to git credentials in .extras
   [ -r ~/update_gitconfig.sh ] && [ -f ~/update_gitconfig.sh ] && bash ~/update_gitconfig.sh;
 }
+
+if [ "$1" == "--force-new" ] || [ "$2" == "--force-new" ]; then
+  FORCENEW=1
+fi;
 
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
   doIt;

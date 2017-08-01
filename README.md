@@ -14,7 +14,7 @@ git clone https://github.com/r-richmond/dotfiles_rr.git && cd dotfiles_rr && bas
 ### Subsequent deploys/intializations
 
 `initialize.sh` behaves a little differently after the first run
-#### Only First Run
+#### Only First Run (i.e. no brew or with --force-new option)
 * Install Brew
 * Run all Brew Files
 * Change default shell to brew-installed shell
@@ -40,6 +40,7 @@ git clone https://github.com/r-richmond/dotfiles_rr.git && cd dotfiles_rr && bas
 ## Things left to do
 * add caps to esc-key setting
 * turnoff mission control key settings for ctrl-up/down
+* add mouse settings for buttons 3, 4, 5
 
 ## Thanks to…
 
