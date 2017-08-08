@@ -18,7 +18,7 @@ impala `jdbc:impala://{host}:{port};AuthMech=1;KrbRealm=FOO.BAR;KrbHostFQDN={ser
 
 1. Brewscript installs `unixodbc`
 1. Run `odbcinst -j` to show current config
-1. `odbc.ini` is where the magic happens make sure its in `~/`
+1. `odbc.ini` is where the magic happens make sure its in `~/Library/ODBC`
 1. `odbc.ini` is different for each database `./odbc.ini` is a postgres sample
 
 ## [Kerberos](https://web.mit.edu/kerberos/krb5-latest/doc/basic/ccache_def.html) Nonsense

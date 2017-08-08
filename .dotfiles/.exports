@@ -62,3 +62,6 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # CLI Color
 # see .aliases
 # export CLICOLOR=1
+
+# ODBC for Unixodbc
+export ODBCINI=/Library/ODBC/odbc.ini;
