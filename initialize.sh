@@ -21,7 +21,7 @@ function doIt() {
 
   # Check if Homebrew is installed
   which -s brew
-  if [[ $? != 0 ]] || [ "$FORCENEW" -eq 1 ] ; then
+  if [[ $? != 0 ]] || [ "$FORCENEW" == 1 ] ; then
     echo "no brew found; running as new install";
     # Install Homebrew
     # https://github.com/mxcl/homebrew/wiki/installation
