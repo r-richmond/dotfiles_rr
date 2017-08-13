@@ -24,7 +24,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+# Suspect this may be causing issue with icons in the dock
+#/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
@@ -84,12 +85,13 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -boo
 sudo pmset destroyfvkeyonstandby 1;
 
 # Log authentication events for 90 days
-# this is broken in 10.12
-# perl -p -i -e 's/rotate=seq file_max=5M all_max=20M/rotate=utc file_max=5M ttl=90/g' "/etc/asl/com.apple.authd"
+sudo perl -p -i -e 's/rotate=seq file_max=5M all_max=20M/rotate=utc file_max=5M ttl=90/g' "/etc/asl/com.apple.authd"
 
 # Log installation events for a year
-# this is broken in 10.12
-# perl -p -i -e 's/format=bsd/format=bsd mode=0640 rotate=utc compress file_max=5M ttl=365/g' "/etc/asl/com.apple.install"
+sudo perl -p -i -e 's/format=bsd/format=bsd mode=0640 rotate=utc compress file_max=5M ttl=365/g' "/etc/asl/com.apple.install"
+
+# Increase the retention time for system.log and secure.log
+sudo perl -p -i -e 's/\/var\/log\/wtmp.*$/\/var\/log\/wtmp   \t\t\t640\ \ 31\    *\t\@hh24\ \J/g' "/etc/newsyslog.conf"
 
 
 ###############################################################################
@@ -207,10 +209,10 @@ dockutil --no-restart --add "/Applications/Utilities/Terminal.app"
 dockutil --no-restart --add "/Applications/System Preferences.app"
 dockutil --no-restart --add "/Applications/Utilities/Console.app"
 dockutil --no-restart --add "/Applications/Atom.app"
-dockutil --no-restart --add "/Applications/Idle 3.app"
 
 # add a recent item stack
 defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}';
+dockutil --add ~/Downloads/ --view grid --display stack;
 
 ###############################################################################
 # Date & Time                                                                 #
@@ -262,7 +264,7 @@ defaults write com.apple.dt.Xcode DVTTextShowLineNumbers -bool true
 # Show page guide
 defaults write com.apple.dt.Xcode DVTTextShowPageGuide -bool true
 
-# Show Unvisible Characters
+# Show Invisible Characters
 defaults write com.apple.dt.Xcode DVTTextShowInvisibleCharacters -bool true
 
 # Show Code Coverage
