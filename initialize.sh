@@ -23,13 +23,13 @@ function doIt() {
   which -s brew
   if [[ $? != 0 ]] || [ "$FORCENEW" == 1 ] ; then
     echo "no brew found; running as new install";
+    # Accept license
+    sudo xcodebuild -license accept;
     # Install Homebrew
     # https://github.com/mxcl/homebrew/wiki/installation
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
     # Install new bash and other things
     brew bundle --file=setup_files/universal.brewfile;
-    brew install bash-completion2;
-    brew install grep --with-default-names;
     # Switch to using brew-installed bash as default shell
     if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
       # Add the new shell to the list of allowed shells
@@ -53,13 +53,15 @@ function doIt() {
     # enable dark mode from brew
     dark-mode on;
     bash setup_files/universal.macos;
+    # Not sure how to add this to brew file yet
+    brew install grep --with-default-names;
 
     echo "Configuring Python Make Sure Python3 is first in Path";
     export PIP_REQUIRE_VIRTUALENV="";
-    pip install --upgrade pip;
-    pip install --upgrade setuptools;
-    pip install virtualenv;
-    pip install virtualenvwrapper;
+    pip3 install --upgrade pip;
+    pip3 install --upgrade setuptools;
+    pip3 install virtualenv;
+    pip3 install virtualenvwrapper;
     export PIP_REQUIRE_VIRTUALENV=true;
     # Make Python Directories
     [ ! -d ~/python3_virtual_envs ] && mkdir ~/python3_virtual_envs;
