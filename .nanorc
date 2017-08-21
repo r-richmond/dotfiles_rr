@@ -8,6 +8,6 @@ set tabstospaces
 ## Width 2
 set tabsize 2
 
-include /usr/local/share/nano/*.nanorc
-
 include ~/.nano/*.nanorc
+
+include /usr/local/share/nano/*.nanorc
