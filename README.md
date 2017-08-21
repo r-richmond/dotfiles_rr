@@ -34,15 +34,21 @@ git clone https://github.com/r-richmond/dotfiles_rr.git && cd dotfiles_rr && bas
 * [DBeaver](http://dbeaver.jkiss.org/) configs
 * [dotfiles](https://dotfiles.github.io/) from ~/.dotfiles/
 * [Nano](https://www.nano-editor.org/overview.php) language files from ~/.nano/
-* [pip.conf] (https://pip.pypa.io/en/stable/user_guide/#config-file)
-* [.psqlrc] (https://robots.thoughtbot.com/an-explained-psqlrc)
+* [pip.conf](https://pip.pypa.io/en/stable/user_guide/#config-file)
+* [.psqlrc](https://robots.thoughtbot.com/an-explained-psqlrc)
 
 ## Things left to do
 * add caps to esc-key setting
+ * system preferences > keyboard > modifier keys
+* replace siri button with lock button on touchbar
+ * system preferences > keyboard > customize control strip
 * turnoff mission control key settings for ctrl-up/down
+ * system preferences > mission control > mission control, application windows
 * add mouse settings for buttons 3, 4, 5
+ * system preferences > mission control >
+
 
 ## Thanks to…
 
-* @mathiasbynens and his [Legendary repository](https://github.com/mathiasbynens/dotfiles) (I've butchered so many of his scripts)
+* @mathiasbynens and his [legendary repository](https://github.com/mathiasbynens/dotfiles)
 * @scopatz for his [nanorc language repo](https://github.com/scopatz/nanorc)
