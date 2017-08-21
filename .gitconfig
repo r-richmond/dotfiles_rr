@@ -115,23 +115,26 @@
   excludesfile = ~/.gitignore
   #attributesfile = ~/.gitattributes
 
-  # Treat spaces before tabs and all kinds of trailing whitespace as an error
-  # [default] trailing-space: looks for spaces at the end of a line
-  # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
-  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
-
-  # Make `git rebase` safer on macOS
-  # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-  trustctime = false
-
-  # Prevent showing files whose names contain non-ASCII symbols as unversioned.
-  # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
-  precomposeunicode = false
+  # play nice with windows (if windows set to true)
+  autocrlf = input
 
   # Use atom as commit editor if exists else nano see .exports
 
   # Use diff so fancy as default diff
   pager = diff-so-fancy | less --tabs=4 -RFX
+
+  # Prevent showing files whose names contain non-ASCII symbols as unversioned.
+  # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+  precomposeunicode = false
+
+  # Make `git rebase` safer on macOS
+  # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+  trustctime = false
+
+  # Treat spaces before tabs and all kinds of trailing whitespace as an error
+  # [default] trailing-space: looks for spaces at the end of a line
+  # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
 [color]
 
@@ -160,9 +163,8 @@
 
 [diff]
 
-  # (git 2.11+) Set this option to `true` to enable an experimental heuristic that
-  # https://github.com/blog/2288-git-2-11-has-been-released
-  indentHeuristic = true
+  # Detect copies as well as renames
+  renames = copies
 
 [diff "bin"]
 
@@ -173,3 +175,13 @@
 
   # Include summaries of merged commits in newly created merge commit messages
   log = true
+
+[pull]
+  # rebase on pull instead of merge
+  rebase = true
+
+[push]
+  # simple is the default in git 2+ but lets be explicit
+  default = simple
+  # Make `git push` push relevant annotated tags when pushing branches out.
+  followTags = true
