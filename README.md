@@ -39,13 +39,15 @@ git clone https://github.com/r-richmond/dotfiles_rr.git && cd dotfiles_rr && bas
 
 ## Things left to do
 * add caps to esc-key setting
- * system preferences > keyboard > modifier keys
+  * system preferences > keyboard > modifier keys
 * replace siri button with lock button on touchbar
- * system preferences > keyboard > customize control strip
+  * system preferences > keyboard > customize control strip
 * turnoff mission control key settings for ctrl-up/down
- * system preferences > mission control > mission control, application windows
+  * system preferences > mission control > mission control, application windows
 * add mouse settings for buttons 3, 4, 5
- * system preferences > mission control >
+  * system preferences > mission control >
+* configure alfred powerpack
+  * setup powerpack & link to sync folder & setup theme
 
 
 ## Thanks to…
