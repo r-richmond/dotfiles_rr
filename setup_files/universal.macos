@@ -99,7 +99,6 @@ sudo perl -p -i -e 's/format=bsd/format=bsd mode=0640 rotate=utc compress file_m
 # Increase the retention time for system.log and secure.log
 sudo perl -p -i -e 's/\/var\/log\/wtmp.*$/\/var\/log\/wtmp   \t\t\t640\ \ 31\    *\t\@hh24\ \J/g' "/etc/newsyslog.conf"
 
-
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
@@ -238,16 +237,6 @@ defaults write com.apple.menuextra.clock FlashDateSeparators -bool false
 defaults write NSGlobalDomain AppleICUTimeFormatStrings '<dict><key>1</key><string>h:mm:ss a</string></dict>'
 
 ###############################################################################
-# Time Machine                                                                #
-###############################################################################
-
-# Prevent Time Machine from prompting to use new hard drives as backup volume
-defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-# Disable local Time Machine backups
-#hash tmutil &> /dev/null && sudo tmutil disablelocal
-
-###############################################################################
 # Activity Monitor                                                            #
 ###############################################################################
 
@@ -264,40 +253,63 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
-# ==============================================
-# Xcode
-# ==============================================
-
-# Always use spaces for indenting
-defaults write com.apple.dt.Xcode DVTTextIndentUsingTabs -bool false
-
-# Show Line Numbers
-defaults write com.apple.dt.Xcode DVTTextShowLineNumbers -bool true
-
-# Show page guide
-defaults write com.apple.dt.Xcode DVTTextShowPageGuide -bool true
-
-# Show Invisible Characters
-defaults write com.apple.dt.Xcode DVTTextShowInvisibleCharacters -bool true
-
-# Show Code Coverage
-defaults write com.apple.dt.Xcode DVTTextShowCodeCoverage -bool true
-
-# Show tab bar
-defaults write com.apple.dt.Xcode AlwaysShowTabBar -bool true
-
 ###############################################################################
 # Address Book, Dashboard, iCal, TextEdit, and Disk Utility                   #
 ###############################################################################
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
+
 # Open and save files as UTF-8 in TextEdit
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 # Week should start on Monday
 defaults write com.apple.ical "first day of the week" 1
+
+###############################################################################
+# Alfred 3                                                                    #
+###############################################################################
+
+# Need to figure how to setup license
+
+# Set Alfred3 Sync Folder
+defaults write com.runningwithcrayons.Alfred-Preferences-3 syncfolder ~/Dropbox/applications/alfred
+
+###############################################################################
+# Google Chrome & Google Chrome Canary                                        #
+###############################################################################
+
+# Use the system-native print preview dialog
+defaults write com.google.Chrome DisablePrintPreview -bool true
+defaults write com.google.Chrome.canary DisablePrintPreview -bool true
+
+# Expand the print dialog by default
+defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
+defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
+
+###############################################################################
+# Mac App Store                                                               #
+###############################################################################
+
+# Enable the WebKit Developer Tools in the Mac App Store
+defaults write com.apple.appstore WebKitDeveloperExtras -bool true
+
+# Enable Debug Menu in the Mac App Store
+defaults write com.apple.appstore ShowDebugMenu -bool true
+
+# Enable the automatic update check
+defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+
+# Check for software updates daily, not just once per week
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+###############################################################################
+# Photos                                                                      #
+###############################################################################
+
+# Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
 # Safari & WebKit                                                             #
@@ -344,7 +356,6 @@ defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
 # Update extensions automatically
 defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
-
 
 ###############################################################################
 # Terminal & iTerm 2                                                          #
@@ -400,39 +411,14 @@ defaults write com.apple.addressbook ABShowDebugMenu -bool true
 defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
 
 ###############################################################################
-# Mac App Store                                                               #
+# Time Machine                                                                #
 ###############################################################################
 
-# Enable the WebKit Developer Tools in the Mac App Store
-defaults write com.apple.appstore WebKitDeveloperExtras -bool true
+# Prevent Time Machine from prompting to use new hard drives as backup volume
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-# Enable Debug Menu in the Mac App Store
-defaults write com.apple.appstore ShowDebugMenu -bool true
-
-# Enable the automatic update check
-defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
-
-# Check for software updates daily, not just once per week
-defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
-
-###############################################################################
-# Photos                                                                      #
-###############################################################################
-
-# Prevent Photos from opening automatically when devices are plugged in
-defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
-###############################################################################
-# Google Chrome & Google Chrome Canary                                        #
-###############################################################################
-
-# Use the system-native print preview dialog
-defaults write com.google.Chrome DisablePrintPreview -bool true
-defaults write com.google.Chrome.canary DisablePrintPreview -bool true
-
-# Expand the print dialog by default
-defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
-defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
+# Disable local Time Machine backups
+#hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 # Transmission.app                                                            #
@@ -462,9 +448,31 @@ defaults write org.m0k.transmission CheckRemoveDownloading -bool true
 # Randomize port on launch
 defaults write org.m0k.transmission RandomPort -bool true
 
-# ==============================================
-# Make links to useful apps
-# ==============================================
+###############################################################################
+# Xcode                                                                       #
+###############################################################################
+
+# Always use spaces for indenting
+defaults write com.apple.dt.Xcode DVTTextIndentUsingTabs -bool false
+
+# Show Line Numbers
+defaults write com.apple.dt.Xcode DVTTextShowLineNumbers -bool true
+
+# Show page guide
+defaults write com.apple.dt.Xcode DVTTextShowPageGuide -bool true
+
+# Show Invisible Characters
+defaults write com.apple.dt.Xcode DVTTextShowInvisibleCharacters -bool true
+
+# Show Code Coverage
+defaults write com.apple.dt.Xcode DVTTextShowCodeCoverage -bool true
+
+# Show tab bar
+defaults write com.apple.dt.Xcode AlwaysShowTabBar -bool true
+
+###############################################################################
+# Make links to useful apps                                                   #
+###############################################################################
 
 # Archive Utility
 sudo ln -s "/System/Library/CoreServices/Archive Utility.app" "/Applications/Utilities/Archive Utility.app"
