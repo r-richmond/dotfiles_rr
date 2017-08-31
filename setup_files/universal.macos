@@ -274,7 +274,27 @@ defaults write com.apple.ical "first day of the week" 1
 # Need to figure how to setup license
 
 # Set Alfred3 Sync Folder
-defaults write com.runningwithcrayons.Alfred-Preferences-3 syncfolder ~/Dropbox/applications/alfred
+defaults write com.runningwithcrayons.Alfred-Preferences-3 syncfolder ~/Dropbox/applications/alfred;
+
+# Set Theme
+FILE="$USER/Dropbox/applications/alfred/dark_alfred.alfredappearance;"
+[ -f "$file" ] && o "$file";
+
+# Quit Alfred 3
+osascript -e 'quit app "ALFRED 3"';
+
+###############################################################################
+# Dash                                                                        #
+###############################################################################
+
+# Download docsets
+
+# Configure licensce
+FILE="$USER/Dropbox/config/purchase/license4.dash-license;"
+[ -f "$file" ] && o "$file";
+
+# Quit Dash
+osascript -e 'quit app "DASH"';
 
 ###############################################################################
 # Google Chrome & Google Chrome Canary                                        #
