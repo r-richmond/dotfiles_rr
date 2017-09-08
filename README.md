@@ -44,7 +44,7 @@ git clone https://github.com/r-richmond/dotfiles_rr.git && cd dotfiles_rr && bas
   * system preferences > keyboard > customize control strip
 * turnoff mission control key settings for ctrl-up/down
   * system preferences > mission control > mission control, application windows
-* add mouse settings for buttons 3, 4, 5
+* add mouse settings for buttons 4, 5, 3
   * system preferences > mission control >
 * configure alfred powerpack
   * setup powerpack & link to sync folder & setup theme
