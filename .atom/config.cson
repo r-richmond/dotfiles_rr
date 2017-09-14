@@ -53,8 +53,7 @@
       splitPane: "Right"
   "line-ending-selector":
     defaultLineEnding: "LF"
-  "linter-ui-default":
-    showPanel: true
+  "linter-ui-default": {}
   "merge-conflicts": {}
   minimap:
     plugins:
