@@ -53,8 +53,6 @@ function doIt() {
     # enable dark mode from brew
     dark-mode on;
     bash setup_files/universal.macos;
-    # Not sure how to add this to brew file yet
-    brew install grep --with-default-names;
 
     echo "Configuring Python Make Sure Python3 is first in Path";
     export PIP_REQUIRE_VIRTUALENV="";

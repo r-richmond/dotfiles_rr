@@ -142,3 +142,9 @@ gifme () {
   convert -delay 25 -loop 0 animate.avi "$1.gif"
   rm animate.avi
 }
+
+# remove newlines & extra spaces
+function prepare_isql () {
+  sed -i ':a;N;$!ba;s/\n/ /g' "$@";
+  sed -i 's/ \+/ /g' "$@";
+}
