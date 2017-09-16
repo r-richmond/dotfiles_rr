@@ -144,7 +144,18 @@ gifme () {
 }
 
 # remove newlines & extra spaces
-function prepare_isql () {
+function replace_newlines_with_spaces () {
   sed -i ':a;N;$!ba;s/\n/ /g' "$@";
   sed -i 's/ \+/ /g' "$@";
+}
+
+# wrap isql export
+function isql_export_to_text () {
+  if [ "$#" -ne 3 ]; then
+    echo "Illegal number of parameters";
+    echo "Should be export_isql odbc_dsn_name sql_file text_file";
+    return 1;
+  fi;
+  replace_newlines_with_spaces $2;
+  isql -v -b -3 -d"|" $1 < $2 > $3;
 }
