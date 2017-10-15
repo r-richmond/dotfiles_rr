@@ -25,7 +25,7 @@ brew 'nano'
 # Application Folder
 cask 'alfred'
 cask 'atom' # Text editor
-cask 'dropbox'
+# cask 'dropbox' # Install first
 # cask 'cheatsheet' # Shows shortcuts by holding down cmd
 cask 'coderunner'
 cask 'cyberduck' # remote file access
@@ -45,7 +45,7 @@ cask 'spectacle' # Window manager
 # Not in Application Folder
 cask 'betterzipql' # QL for zips
 cask 'java'
-cask 'jce-unlimited-strength-policy'
+# cask 'jce-unlimited-strength-policy' this was deleted as its included in java 9 by default TODO: remove
 cask 'qlcolorcode' # Colorize QL
 cask 'qlmarkdown' # QL for .md
 cask 'qlstephen' # QL for plain text files

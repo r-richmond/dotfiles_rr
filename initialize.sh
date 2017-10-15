@@ -16,20 +16,27 @@ function doIt() {
   --exclude ".atom/.my_atom_packages" \
   -avh --no-perms . ~;
 
-  # shellcheck source=/dev/null
-  source ~/.bash_profile;
-
   # Check if Homebrew is installed
   which -s brew
   if [[ $? != 0 ]] || [ "$FORCENEW" == 1 ] ; then
     echo "no brew found; running as new install";
-    # Accept license
-    sudo xcodebuild -license accept;
     # Install Homebrew
     # https://github.com/mxcl/homebrew/wiki/installation
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
+    # Turn off brew analytics
+    brew analytics off;
     # Install new bash and other things
     brew bundle --file=setup_files/universal.brewfile;
+    # Accept license
+    sudo xcodebuild -license accept;
+    read -p "Did you accept the license? (y/n) " -n 1;
+    echo "";
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+      echo "xcode license accepted"
+    else
+      echo "you didn't accept the license"
+      return 1
+    fi;
     # Switch to using brew-installed bash as default shell
     if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
       # Add the new shell to the list of allowed shells
@@ -56,10 +63,10 @@ function doIt() {
 
     echo "Configuring Python Make Sure Python3 is first in Path";
     export PIP_REQUIRE_VIRTUALENV="";
-    pip3 install --upgrade pip;
-    pip3 install --upgrade setuptools;
-    pip3 install virtualenv;
-    pip3 install virtualenvwrapper;
+    pip3 install -q --upgrade pip;
+    pip3 install -q --upgrade setuptools;
+    pip3 install -q virtualenv;
+    pip3 install -q virtualenvwrapper;
     export PIP_REQUIRE_VIRTUALENV=true;
     # Make Python Directories
     [ ! -d ~/python3_virtual_envs ] && mkdir ~/python3_virtual_envs;
@@ -74,6 +81,10 @@ function doIt() {
   else
     echo "brew found; running as update not new install";
   fi;
+
+  echo "sourcing bash_profile";
+  # shellcheck source=/dev/null
+  source ~/.bash_profile;
 
   echo "assigning crontab";
   crontab ~/crontab/crontab;
