@@ -4,6 +4,9 @@
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit;
 
 function doIt() {
+  # Update submodles
+  git submodule update --init --recursive;
+
   rsync --exclude ".git/" \
   --exclude ".DS_Store" \
   --exclude "initialize.sh" \
