@@ -22,5 +22,6 @@ merge-conflicts
 minimap
 minimap-find-and-replace
 minimap-git-diff
+open-terminal-here
 sort-lines
 split-diff
