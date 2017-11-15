@@ -13,6 +13,7 @@ language-crontab
 language-docker
 language-dotfiles
 language-protobuf
+language-r
 language-swift
 linter
 linter-docker

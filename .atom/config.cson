@@ -8,6 +8,8 @@
   "autocomplete-python":
     useKite: false
     useSnippets: "required"
+  "bracket-matcher":
+    highlightMatchingLineNumber: true
   core:
     customFileTypes:
       "source.dotfiles": [
@@ -39,6 +41,7 @@
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
+    softWrap: true
     tabType: "soft"
   "exception-reporting":
     userId: "59679e97-877a-be0d-5cdb-fc639e15f075"
