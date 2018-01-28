@@ -38,8 +38,10 @@ git clone https://github.com/r-richmond/dotfiles_rr.git && cd dotfiles_rr && bas
 * [.psqlrc](https://robots.thoughtbot.com/an-explained-psqlrc)
 
 ## Things left to do
-* add caps to esc-key setting
-  * system preferences > keyboard > modifier keys
+* updated keyboard shortcuts
+  * change caps to esc-key - system preferences > keyboard > modifier keys
+  * add notification to option-` - system preferences > keyboard > shortcuts > mission control
+  * change keyboard ctrl-option-cmd-space - system preferences > keyboard > shortcuts > input sources
 * replace siri button with lock button on touchbar
   * system preferences > keyboard > customize control strip
 * turnoff mission control key settings for ctrl-up/down
