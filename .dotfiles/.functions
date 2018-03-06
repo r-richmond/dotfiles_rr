@@ -10,20 +10,6 @@ function cdf() { # short for `cdfinder`
   cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
 
-# for global pip https://hackercodex.com/guide/python-development-environment-on-mac-osx/
-function gpip(){
-  # If no Pip then Pip3
-  if hash pip 2>/dev/null; then
-    PIP_REQUIRE_VIRTUALENV="" ; pip "$@" ; PIP_REQUIRE_VIRTUALENV=true;
-  else
-    PIP_REQUIRE_VIRTUALENV="" ; pip3 "$@" ; PIP_REQUIRE_VIRTUALENV=true;
-  fi;
-}
-
-function gpip3(){
-  PIP_REQUIRE_VIRTUALENV="" ; pip3 "$@" ; PIP_REQUIRE_VIRTUALENV=true;
-}
-
 # useful for converting .plist files
 function default_bin_to_xml() {
   plutil -convert xml1 $1

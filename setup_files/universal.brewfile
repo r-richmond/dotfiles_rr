@@ -14,7 +14,7 @@ brew 'insect' # https://github.com/sharkdp/insect
 brew 'mas' # https://github.com/mas-cli/mas
 brew 'nmap' # port tool
 brew 'npm'
-brew 'python3'
+brew 'python' # This is now python 3 :D
 brew 'shellcheck' # https://github.com/koalaman/shellcheck
 brew 'trash'
 brew 'tree'

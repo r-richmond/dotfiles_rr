@@ -140,8 +140,7 @@ alias help_python_venv="echo '${green}mkvirtualenv ${reset}${orange}foo${reset} 
   echo '${green}rmvirtualenv ${reset}${orange}foo${reset} deletes a virtual env'; \
   echo '${green}lsvirtualenv${reset} lists all virtual env'; \
   echo '${green}setvirtualenvproject${reset} to associate current directory with active virtual env'; \
-  echo '${green}removevirtualenvlinks${reset} cd to project, delete links, then recreate with ${green}mkvirtualenv${reset}'; \
-  echo '${green}gpip${reset} or ${green}gpip3${reset} to ignore virtualenv requirement';"
+  echo '${green}removevirtualenvlinks${reset} cd to project, delete links, then recreate with ${green}mkvirtualenv${reset}';
 
 # Docker Aliases
 alias docker_rm_images_all="docker rmi \`docker images -q\`";
