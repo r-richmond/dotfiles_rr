@@ -22,10 +22,10 @@ export PYTHONIOENCODING='UTF-8';
 
 # https://hackercodex.com/guide/python-development-environment-on-mac-osx/
 # pip should only run if there is a virtualenv currently activated
-export PIP_REQUIRE_VIRTUALENV=true
+# export PIP_REQUIRE_VIRTUALENV=true
 
 # http://docs.python-guide.org/en/latest/dev/virtualenvs/
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3 #Python still points to Python2
 export WORKON_HOME=~/python_virtual_envs
 export PROJECT_HOME=~/Dropbox/projects/python
 source /usr/local/bin/virtualenvwrapper.sh
