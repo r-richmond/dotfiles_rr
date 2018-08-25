@@ -25,7 +25,7 @@ export PYTHONIOENCODING='UTF-8';
 # export PIP_REQUIRE_VIRTUALENV=true
 
 # http://docs.python-guide.org/en/latest/dev/virtualenvs/
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3 #Python still points to Python2
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export WORKON_HOME=~/python_virtual_envs
 export PROJECT_HOME=~/Dropbox/projects/python
 source /usr/local/bin/virtualenvwrapper.sh
