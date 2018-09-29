@@ -51,6 +51,11 @@ git clone https://github.com/r-richmond/dotfiles_rr.git && cd dotfiles_rr && bas
 * configure alfred powerpack
   * setup powerpack & link to sync folder & setup theme
 
+## When Python Update season rolls around
+* Fix Hydrogen
+  * python3 -m jupyter kernelspec remove python3
+  * python3 -m ipykernel install
+* Fix Virtual envs
 
 ## Thanks to…
 
