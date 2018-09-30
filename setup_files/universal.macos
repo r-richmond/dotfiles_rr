@@ -216,6 +216,9 @@ dockutil --no-restart --add "/Applications/Facetime.app";
 dockutil --no-restart --add "/Applications/Maps.app";
 dockutil --no-restart --add "/Applications/Photos.app";
 dockutil --no-restart --add "/Applications/Itunes.app";
+dockutil --no-restart --add "/Applications/News.app";
+dockutil --no-restart --add "/Applications/Stocks.app";
+dockutil --no-restart --add "/Applications/Home.app";
 dockutil --no-restart --add "/Applications/App Store.app";
 dockutil --no-restart --add "/Applications/Utilities/Terminal.app";
 dockutil --no-restart --add "/Applications/System Preferences.app";
@@ -419,10 +422,10 @@ end tell
 EOD
 
 # Install the Solarized Dark theme for iTerm
-open "${HOME}/terminal_themes/solarized-dark.itermcolors"
+# open "${HOME}/terminal_themes/solarized-dark.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+# defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 # Enable the debug menu in Address Book
 defaults write com.apple.addressbook ABShowDebugMenu -bool true

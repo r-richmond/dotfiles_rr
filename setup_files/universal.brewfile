@@ -1,7 +1,8 @@
 brew 'bash'
 brew 'bash-completion2'
 # there is a bash completition install in initialize.sh
-brew 'dark-mode' # https://github.com/sindresorhus/dark-mode
+# Not needed with Mojave Dark Theme
+# brew 'dark-mode' # https://github.com/sindresorhus/dark-mode
 brew 'diff-so-fancy' # https://github.com/so-fancy/diff-so-fancy
 brew 'dockutil'
 brew 'git'
@@ -33,7 +34,7 @@ cask 'dash' # Documentation
 cask 'docker'
 # cask 'github-desktop' # GUI for github
 cask 'google-chrome'
-cask 'iterm2' # Terminal alternative
+# cask 'iterm2' # Terminal alternative
 cask 'keycastr' # Key casting
 cask 'kitematic' # docker
 # cask 'launchrocket' # https://github.com/jimbojsb/launchrocket
@@ -43,7 +44,6 @@ cask 'pycharm' # Python IDE
 cask 'spectacle' # Window manager
 
 # Not in Application Folder
-cask 'betterzipql' # QL for zips
 cask 'java'
 # cask 'jce-unlimited-strength-policy' this was deleted as its included in java 9 by default TODO: remove
 cask 'qlcolorcode' # Colorize QL
