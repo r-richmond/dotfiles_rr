@@ -7,6 +7,6 @@ cask 'tunnelblick'
 #cask 'vlc'
 
 # Mac App Store
-mas '1Password', id: 443987910
+# mas '1Password', id: 443987910 standalone allow direct purchase
 mas 'CodeBox', id: 412536790
 mas 'MacFamilyTree 7', id: 572280828

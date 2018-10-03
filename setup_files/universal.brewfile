@@ -51,10 +51,6 @@ cask 'qlmarkdown' # QL for .md
 cask 'qlstephen' # QL for plain text files
 cask 'quicklook-csv' # QL for csv
 
-# Mac App Store
-mas 'Microsoft Remote Desktop', id: 715768417
-mas 'Xcode', id: 497799835
-
 #Dupes
 #tap 'homebrew/dupes'
 #brew 'homebrew/dupes/nano' # depreciated but left syntax guide
