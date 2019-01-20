@@ -34,6 +34,10 @@ shopt -s cmdhist;
 # Add tab completion for many Bash commands
 if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
   source "$(brew --prefix)/share/bash-completion/bash_completion";
+  # Temporary fix
+  for file in "$(brew --prefix)/etc/bash_completion.d/"*; do
+    source "$file";
+  done;
 elif [ -f /etc/bash_completion ]; then
   source /etc/bash_completion;
 fi;
