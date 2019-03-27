@@ -7,8 +7,6 @@ brew 'git'
 brew 'git-lfs'
 brew 'git-extras' # https://github.com/tj/git-extras
 brew 'git-open' # https://github.com/jeffreyiacono/git-open
-brew 'grep', args: ['--with-default-names']
-brew 'gnu-sed', args: ['--with-default-names']
 brew 'hugo' # https://gohugo.io
 brew 'insect' # https://github.com/sharkdp/insect
 brew 'mas' # https://github.com/mas-cli/mas
@@ -33,7 +31,6 @@ cask 'dash' # Documentation
 cask 'docker'
 # cask 'github-desktop' # GUI for github
 cask 'google-chrome'
-# cask 'iterm2' # Terminal alternative
 cask 'keycastr' # Key casting
 cask 'kitematic' # docker
 # cask 'launchrocket' # https://github.com/jimbojsb/launchrocket
