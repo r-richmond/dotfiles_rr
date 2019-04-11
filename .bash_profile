@@ -1,12 +1,16 @@
 # set path:
-# check whether the Haskell binary directory exists and if so add it to the PATH
+# check presence of Haskell binary directory and if so add it to the PATH
 [ -d "$HOME/Library/Haskell/bin" ] && export PATH="$HOME/Library/Haskell/bin:$PATH";
-# check whether the mysql binary directory exists and if so add it to the PATH
+# check presence of mysql binary directory and if so add it to the PATH
 [ -d "/usr/local/mysql/bin" ] && export PATH="/usr/local/mysql/bin:$PATH";
-# check whether the current user has a $HOME/bin and if so add it to the PATH
+# check presence of a $HOME/bin and if so add it to the PATH
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH";
-# check whether the postgres app and add it to the path if it exists
-[ -d "/Applications/Postgres.app" ] &&  export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH";
+# check presence of postgres app and add it to the path if it exists
+[ -d "/Applications/Postgres.app" ] && export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH";
+# check presence of brew grep and add to path if it exists
+[ -d "/usr/local/opt/grep/libexec/gnubin" ] && export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH";
+# check presence of brew gnu-sed and add to path if it exists
+[ -d "/usr/local/opt/gnu-sed/libexec/gnubin" ] && export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH";
 # remove duplicates from the path
 export PATH=`awk -F: '{for(i=1;i<=NF;i++){if(!($i in a)){a[$i];printf s$i;s=":"}}}'<<<$PATH`;
 

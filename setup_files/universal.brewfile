@@ -7,6 +7,8 @@ brew 'git'
 brew 'git-lfs'
 brew 'git-extras' # https://github.com/tj/git-extras
 brew 'git-open' # https://github.com/jeffreyiacono/git-open
+brew 'grep'
+brew 'gnu-sed'
 brew 'hugo' # https://gohugo.io
 brew 'insect' # https://github.com/sharkdp/insect
 brew 'mas' # https://github.com/mas-cli/mas
