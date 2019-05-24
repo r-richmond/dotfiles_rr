@@ -25,10 +25,7 @@ export PYTHONIOENCODING='UTF-8';
 # export PIP_REQUIRE_VIRTUALENV=true
 
 # http://docs.python-guide.org/en/latest/dev/virtualenvs/
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export WORKON_HOME=~/python_virtual_envs
-export PROJECT_HOME=~/Dropbox/projects/python
-source /usr/local/bin/virtualenvwrapper.sh
 
 # Increase Bash history size. Allow 32³ entries; the default is 500.
 export HISTSIZE='32768';
@@ -51,10 +48,6 @@ export LC_ALL='en_US.UTF-8';
 
 # Highlight section titles in manual pages.
 export LESS_TERMCAP_md="${yellow}";
-
-# Kerberos https://web.mit.edu/kerberos/krb5-latest/doc/basic/ccache_def.html
-# this was really wrong :/
-#export KRB5CCNAME=/etc/krb5.conf;
 
 # Java home
 export JAVA_HOME=$(/usr/libexec/java_home)

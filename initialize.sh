@@ -65,14 +65,12 @@ function doIt() {
     bash setup_files/universal.macos;
 
     echo "Configuring Python Make Sure python is first in Path";
-    export PIP_REQUIRE_VIRTUALENV="";
     pip3 install -q --upgrade pip;
     pip3 install -q --upgrade setuptools;
-    pip3 install -q virtualenv;
-    pip3 install -q virtualenvwrapper;
-    export PIP_REQUIRE_VIRTUALENV=true;
-    # Make Python Directories
     [ ! -d ~/python_virtual_envs ] && mkdir ~/python_virtual_envs;
+    pip3 install -q flake8;
+    pip3 install -q black;
+
     [ ! -d ~/Dropbox ] && mkdir ~/Dropbox;
     [ ! -d ~/Dropbox/python ] && mkdir ~/Dropbox/python;
 

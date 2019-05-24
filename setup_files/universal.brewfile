@@ -15,6 +15,7 @@ brew 'mas' # https://github.com/mas-cli/mas
 brew 'nmap' # port tool
 brew 'npm'
 brew 'python' # This is now python 3 :D
+brew 'pipenv'
 brew 'shellcheck' # https://github.com/koalaman/shellcheck
 brew 'trash'
 brew 'tree'
@@ -26,7 +27,6 @@ brew 'nano'
 cask 'alfred'
 cask 'atom' # Text editor
 # cask 'dropbox' # Install first
-# cask 'cheatsheet' # Shows shortcuts by holding down cmd
 cask 'coderunner'
 cask 'cyberduck' # remote file access
 cask 'dash' # Documentation
