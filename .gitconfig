@@ -177,16 +177,19 @@
   log = true
 
 [pull]
+
   # rebase on pull instead of merge
   rebase = true
 
 [push]
+
   # simple is the default in git 2+ but lets be explicit
   default = simple
   # Make `git push` push relevant annotated tags when pushing branches out.
   followTags = true
 
 [filter "lfs"]
+
   clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
