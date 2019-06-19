@@ -18,7 +18,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Example: Use Googles DNS as default DNS
-#sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
+# sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
 sudo networksetup -setdnsservers Wi-Fi 2001:4860:4860::8888 2001:4860:4860::8844
 
 ###############################################################################
@@ -52,12 +52,6 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-
-# Set a custom wallpaper image. `DefaultDesktop.jpg` is already a symlink, and
-# all wallpapers are in `/Library/Desktop Pictures/`. The default is `Wave.jpg`.
-#rm -rf ~/Library/Application Support/Dock/desktoppicture.db
-#sudo rm -rf /System/Library/CoreServices/DefaultDesktop.jpg
-#sudo ln -s /path/to/your/image /System/Library/CoreServices/DefaultDesktop.jpg
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -165,8 +159,6 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Show item info near icons on the desktop and in other icon views
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist;
-# Does not exist?
-#/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist;
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist;
 
 # Use list view in all Finder windows by default
@@ -226,7 +218,7 @@ defaults write com.apple.dock wvous-tr-modifier -int 0
 defaults write com.apple.dock wvous-bl-corner -int 0 # was 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
-#Cusomize Dock Apps
+# Cusomize Dock Apps
 dockutil --no-restart --remove all;
 dockutil --no-restart --add "/Applications/Finder.app";
 dockutil --no-restart --add "/Applications/Launchpad.app";
@@ -302,11 +294,11 @@ defaults write com.apple.ical "first day of the week" 1
 # Need to figure how to setup license
 
 # Set Alfred3 Sync Folder
-defaults write com.runningwithcrayons.Alfred-Preferences-3 syncfolder ~/Dropbox/applications/alfred;
+defaults write com.runningwithcrayons.Alfred-Preferences syncfolder ~/Dropbox/applications/alfred;
 
 # Set Theme
-FILE="$USER/Dropbox/applications/alfred/dark_alfred.alfredappearance;"
-[ -f "$file" ] && o "$file";
+FILE="/Users/$USER/Dropbox/applications/alfred/dracula.alfredappearance;"
+[ -f "$FILE" ] && o "$FILE";
 
 # Quit Alfred 3
 osascript -e 'quit app "ALFRED 3"';
@@ -318,8 +310,11 @@ osascript -e 'quit app "ALFRED 3"';
 # Download docsets
 
 # Configure licensce
-FILE="$USER/Dropbox/config/purchase/license4.dash-license;"
-[ -f "$file" ] && o "$file";
+FILE="/Users/$USER/Dropbox/config/purchase/license4.dash-license";
+[ -f "$FILE" ] && o "$FILE";
+
+FILE="/Users/$USER/Dropbox/applications/dash/Dash.dashsync";
+[ -f "$FILE" ] && o "$FILE";
 
 # Quit Dash
 osascript -e 'quit app "DASH"';
