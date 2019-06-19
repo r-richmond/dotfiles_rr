@@ -1,7 +1,5 @@
 "*":
   "atom-beautify":
-    general:
-      _analyticsUserId: "4fdacc2f-094c-4b77-9678-b17f44d0acd1"
     json:
       indent_size: 2
       keep_array_indentation: true
@@ -36,6 +34,7 @@
       "an-old-hope-syntax"
     ]
   editor:
+    autoIndentOnPaste: false
     invisibles: {}
     preferredLineLength: 120
     scrollPastEnd: true
@@ -43,20 +42,20 @@
     showInvisibles: true
     softWrap: true
     tabType: "soft"
-  "exception-reporting":
-    userId: "59679e97-877a-be0d-5cdb-fc639e15f075"
   "git-diff-details":
     closeAfterCopy: true
     enableSyntaxHighlighting: true
   "git-plus":
     experimental: {}
     general:
-      _analyticsUserId: "9792c6bb-7ab5-4322-81a8-c5c349ce8fb2"
       messageTimeout: 7
       splitPane: "Right"
   "line-ending-selector":
     defaultLineEnding: "LF"
-  "linter-ui-default": {}
+  "linter-flake8":
+    maxLineLength: 88
+  "linter-ui-default":
+    panelHeight: 300
   "merge-conflicts": {}
   minimap:
     plugins:

@@ -17,6 +17,7 @@ language-protobuf
 language-swift
 linter
 linter-docker
+linter-flake8
 linter-shellcheck
 linter-ui-default
 merge-conflicts
