@@ -32,7 +32,7 @@ git clone https://github.com/r-richmond/dotfiles_rr.git && cd dotfiles_rr && bas
 * [Atom](https://atom.io/) configs
 * Updates list of Atom packages in .atom/.my_atom_packages
 * [DBeaver](http://dbeaver.jkiss.org/) configs
-* [dotfiles](https://dotfiles.github.io/) from ~/.dotfiles/
+* [dotfiles](https://dotfiles.github.io/) from ~/.dotfiles-bash/
 * [Nano](https://www.nano-editor.org/overview.php) language files from ~/.nano/
 * [pip.conf](https://pip.pypa.io/en/stable/user_guide/#config-file)
 * [.psqlrc](https://robots.thoughtbot.com/an-explained-psqlrc)

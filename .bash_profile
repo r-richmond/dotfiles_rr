@@ -17,7 +17,7 @@ export PATH=`awk -F: '{for(i=1;i<=NF;i++){if(!($i in a)){a[$i];printf s$i;s=":"}
 # incase no dot files
 shopt -s nullglob;
 
-for file in ~/.dotfiles/.[^.]*; do
+for file in ~/.dotfiles-bash/.[^.]*; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;

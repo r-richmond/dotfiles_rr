@@ -13,7 +13,7 @@ alias -- -="cd -"
 # List Atom Packages
 # http://evanhahn.com/atom-apm-install-list/
 alias list_atom_packages="apm list --installed --bare | grep '^[^@]\+' -o"
-alias list_functions="cat ~/.dotfiles/.functions"
+alias list_functions="cat ~/.dotfiles-bash/.functions"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -131,7 +131,7 @@ alias workoff='deactivate && cd ~';
 alias removevirtualenvlinks='find . -type l -delete';
 
 # Colors from .bash_prompt
-source ~/.dotfiles/.bash_prompt;
+source ~/.dotfiles-bash/.bash_prompt;
 alias help_python_venv="echo '${green}mkvirtualenv ${reset}${orange}foo${reset} makes a new virtual env'; \
   echo '${green}mkproject ${reset}${orange}foo${reset} creates ${orange}foo${reset} in PROJECT_HOME ($PROJECT_HOME)'; \
   echo '${green}workon ${reset}${orange}foo${reset} creates / activates new virtual env / cd into project'; \

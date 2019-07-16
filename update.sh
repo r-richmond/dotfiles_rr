@@ -31,12 +31,12 @@ function doIt() {
     "$DIR"/.dbeaver4/.metadata/.plugins/org.eclipse.core.runtime/.settings/
   done;
 
-  # pull in dotfiles from ~/.dotfiles/
-  for file in ~/.dotfiles/.[^.]*; do
+  # pull in dotfiles from ~/.dotfiles-bash/
+  for file in ~/.dotfiles-bash/.[^.]*; do
     if [[ "$file" == */.extra ]]; then
       continue; # don't sync .extra it isn't tracked
     fi;
-    [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/.dotfiles/
+    [ -r "$file" ] && [ -f "$file" ] && rsync -ciah "$file" "$DIR"/.dotfiles-bash/
   done;
   unset file;
 
